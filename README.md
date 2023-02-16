@@ -1,43 +1,15 @@
-## them.es Starter Theme
+## PSN WordPress theme
 
-**them.es Starter** is a WordPress Starter Theme built with Bootstrap. Please note that the Source files are only recommended for WordPress Developers who are searching for a simple, solid, proved and tested **Bootstrap Starter Theme** to build upon. **_Don't_ expect a ready-to-use WordPress Theme!**
+This theme will work only if you installed WordPress Plugin "DK-PSN", it will collect all PSN data in your local server and show to the visitors.
 
-If you want to see it in action or want to download a customized Theme for free, check out [https://them.es/starter-bootstrap](https://them.es/starter-bootstrap)
+* Translation ready, English and Chinese are included and you can translate with mo files for your own languages.
+* Based on bootstrap 5.3
+* Sass
 
+Demo site: https://psn.dukeyin.com/
 
-## What's included?
-* WordPress Theme
-* Bootstrap Framework
-* Sass Source files
-* gulp + webpack configuration
-* NPM configuration to keep the required build libraries updated and to add new libraries
-* Customization API
-* 2 Menus
-* Demo Content
+To build a site like above demo, you need to purchase "DK-PSN" plugin to help getting your psn data from sony PlayStation website, then install this theme. 
 
+"DK-PSN" purchase: https://www.dukeyin.com/product/dk-psn/
 
-## Task Automation
-This Theme comes with a built in gulp/webpack task automation. Sass files will be compiled if changed, vendor prefixes will be added automatically and the CSS will be minified. JS source files will be bundled and minified.
-
-* Prerequisites: [Node.js](https://nodejs.org) (NPM) needs to be installed on your system
-* Open the **Project directory** `/` in Terminal and install the required Node.js dependencies: gulp, webpack, Sass-Compiler, Autoprefixer, etc.
-* `$ npm install`
-* Run the **`watch`** script
-* `$ npm run watch`
-* Modify `/assets/main.scss` and `/assets/main.js`
-
-
-## Technology
-
-* [Bootstrap](https://github.com/twbs/bootstrap), [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* [Sass](https://github.com/sass/sass), [MIT license](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
-* [gulp](https://github.com/gulpjs/gulp), [MIT license](https://github.com/gulpjs/gulp/blob/master/LICENSE)
-* [webpack](https://github.com/webpack/webpack), [MIT license](https://github.com/webpack/webpack/blob/master/LICENSE)
-* [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
-
-
-## Copyright & License
-
-Code and Documentation &copy; [them.es](https://them.es)
-
-Code released under [GPLv2+](https://www.gnu.org/licenses/gpl-2.0.html)
+You will also get custom wp-json api to use your psn data on other places.
