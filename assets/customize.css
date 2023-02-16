@@ -1,0 +1,7 @@
+.card-img, .card-img-bottom, .card-img-top{
+    height:100%;
+    overflow:hidden
+}
+.post-thumbnail img{
+    border-radius:10px
+}
