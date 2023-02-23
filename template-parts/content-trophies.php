@@ -5,6 +5,13 @@
             'posts_per_page'    => 10,
             'post_type'         => 'psn_trophy',
             'ignore_sticky_posts' => 1,
+            'meta_query' => array(
+              array(
+                'key' => 'earned',
+                'compare' => '=',
+                'value' => '1',
+              )
+            ),
         );
         $posts = new WP_Query( $args );
         if ( $posts->have_posts() ) {
