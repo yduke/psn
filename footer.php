@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<p><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'psn' ), date_i18n( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
+						<p><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'psn' ), date_i18n( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?> Powered by <a href="https://www.dukeyin.com/product/dk-psn/" target="_blank">DK-PSN</a></p>
 					</div>
 
 					<?php
