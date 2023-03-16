@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-02-09 13:01+0800\n"
-"PO-Revision-Date: 2023-02-09 13:02+0800\n"
+"POT-Creation-Date: 2023-03-17 00:35+0800\n"
+"PO-Revision-Date: 2023-03-17 00:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Recent Games"
 msgstr "最近游戏"
 
-#: archive.php:16 template-parts/content-trophies.php:12
+#: archive.php:16 template-parts/content-trophies.php:19
 msgid "Recent Trophies"
 msgstr "最近奖杯"
 
@@ -119,17 +119,18 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-index.php:11 content.php:15 content.php:23 sidebar.php:46
+#: content-index.php:13 content.php:15 content.php:23 sidebar.php:46
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-index.php:27
+#: content-index.php:29
 msgid "View"
 msgstr "查看"
 
-#: content-index.php:29 template-parts/content-games.php:35
-#: template-parts/content-trophies.php:25
+#: content-index.php:31 template-parts/content-games.php:35
+#: template-parts/content-trophies-list.php:10
+#: template-parts/content-trophies.php:33
 msgid " ago"
 msgstr "前"
 
@@ -149,7 +150,7 @@ msgstr "页："
 #: content-single.php:34 content.php:113 footer.php:48 functions.php:359
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:103
-#: template-parts/content-single-trophy.php:63
+#: template-parts/content-single-trophy.php:68
 msgid "Edit"
 msgstr "编辑"
 
@@ -430,7 +431,7 @@ msgstr "分类"
 msgid "Tag: %s"
 msgstr "标签：%s"
 
-#: template-parts/content-games.php:42 template-parts/content-trophies.php:32
+#: template-parts/content-games.php:42 template-parts/content-trophies.php:40
 msgid "More"
 msgstr "更多"
 
@@ -447,7 +448,7 @@ msgid "Last Played on"
 msgstr "最后游玩"
 
 #: template-parts/content-single-game.php:20
-#: template-parts/content-single-trophy.php:23
+#: template-parts/content-single-trophy.php:25
 msgid "by"
 msgstr ""
 
@@ -503,15 +504,19 @@ msgstr "已购买"
 msgid "Description"
 msgstr "简介"
 
-#: template-parts/content-single-trophy.php:21
+#: template-parts/content-single-trophy.php:23
 msgid "Earned on"
 msgstr "获得于"
 
-#: template-parts/content-single-trophy.php:30
+#: template-parts/content-single-trophy.php:28
+msgid "Unearned"
+msgstr ""
+
+#: template-parts/content-single-trophy.php:35
 msgid "From Game"
 msgstr "来自游戏"
 
-#: template-parts/content-single-trophy.php:53
+#: template-parts/content-single-trophy.php:58
 msgid "Trophy Progress"
 msgstr "奖杯进程"
 
@@ -549,6 +554,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Page (Default)"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "TEST"
 msgstr ""
 
 #~ msgid "Type"

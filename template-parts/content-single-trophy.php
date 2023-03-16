@@ -17,11 +17,16 @@
             <?php the_excerpt();?>
         </p>
         <div class="entry-meta">
-            <?php echo
+            <?php
+            if( get_post_meta($post_id,'earned',true) == '1'){
+            echo
                 __('Earned on','psn').' '
                 .esc_attr( get_the_date() . ' - ' . get_the_time() )
                 .' '.__('by','psn').' '
                 .get_option('psn_player_id');
+              }else{
+                echo __('Unearned','psn');
+              }
                 ?>
         </div><!-- /.entry-meta -->
     </div>

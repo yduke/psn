@@ -15,9 +15,9 @@
         <p><?php echo __('Last updated on: ','psn'). get_option('psn_last_update'); ?></p>
         <div class="row text-center">
             <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/platinum.png' ?>" alt="platinum" width="30"> <?php echo get_option('psn_player_platinum'); ?></div>
-            <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/gold.png' ?>" alt="platinum" width="30"> <?php echo get_option('psn_player_gold'); ?></div>
-            <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/silver.png' ?>" alt="platinum" width="30"> <?php echo get_option('psn_player_silver'); ?></div>
-            <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/bronze.png' ?>" alt="platinum" width="30"> <?php echo get_option('psn_player_bronze'); ?></div>
+            <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/gold.png' ?>" alt="gold" width="30"> <?php echo get_option('psn_player_gold'); ?></div>
+            <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/silver.png' ?>" alt="silver" width="30"> <?php echo get_option('psn_player_silver'); ?></div>
+            <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/bronze.png' ?>" alt="bronze" width="30"> <?php echo get_option('psn_player_bronze'); ?></div>
         </div>
       </div><!-- /.col-lg-4 -->
     </div>
