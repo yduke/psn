@@ -16,7 +16,7 @@
         $posts = new WP_Query( $args );
         if ( $posts->have_posts() ) {
     ?>
-<h2><?php _e('Recent Trophies','psn');?></h2>
+<h2><?php _e('Recent PlayStation Trophies','psn');?></h2>
 <div class="list-group w-auto mb-5">
     <?php
         while ( $posts->have_posts() ) {

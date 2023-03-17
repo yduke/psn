@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-03-17 00:35+0800\n"
-"PO-Revision-Date: 2023-03-17 00:36+0800\n"
+"POT-Creation-Date: 2023-03-18 06:08+0800\n"
+"PO-Revision-Date: 2023-03-18 06:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -30,11 +30,11 @@ msgstr "未找到"
 msgid "It looks like nothing was found at this location."
 msgstr ""
 
-#: archive.php:14 template-parts/content-games.php:12
+#: archive.php:14
 msgid "Recent Games"
 msgstr "最近游戏"
 
-#: archive.php:16 template-parts/content-trophies.php:19
+#: archive.php:16
 msgid "Recent Trophies"
 msgstr "最近奖杯"
 
@@ -129,6 +129,7 @@ msgid "View"
 msgstr "查看"
 
 #: content-index.php:31 template-parts/content-games.php:35
+#: template-parts/content-steam_games.php:28
 #: template-parts/content-trophies-list.php:10
 #: template-parts/content-trophies.php:33
 msgid " ago"
@@ -144,12 +145,14 @@ msgstr "抱歉，未找到任何结果。"
 
 #: content-single.php:29 content.php:49 image.php:46
 #: template-parts/content-single-game.php:97
+#: template-parts/content-single-steam_game.php:50
 msgid "Pages:"
 msgstr "页："
 
 #: content-single.php:34 content.php:113 footer.php:48 functions.php:359
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:103
+#: template-parts/content-single-steam_game.php:56
 #: template-parts/content-single-trophy.php:68
 msgid "Edit"
 msgstr "编辑"
@@ -273,6 +276,7 @@ msgstr "回复"
 
 #: functions.php:448 functions.php:449
 #: template-parts/content-single-game.php:32
+#: template-parts/content-single-steam_game.php:28
 msgid "Name"
 msgstr "名称"
 
@@ -431,7 +435,13 @@ msgstr "分类"
 msgid "Tag: %s"
 msgstr "标签：%s"
 
-#: template-parts/content-games.php:42 template-parts/content-trophies.php:40
+#: template-parts/content-games.php:12
+msgid "Recent PlayStation Games"
+msgstr "最近PlayStation游戏"
+
+#: template-parts/content-games.php:42
+#: template-parts/content-steam_games.php:35
+#: template-parts/content-trophies.php:40
 msgid "More"
 msgstr "更多"
 
@@ -444,15 +454,18 @@ msgid "Last updated on: "
 msgstr "最后更新："
 
 #: template-parts/content-single-game.php:18
+#: template-parts/content-single-steam_game.php:14
 msgid "Last Played on"
 msgstr "最后游玩"
 
 #: template-parts/content-single-game.php:20
+#: template-parts/content-single-steam_game.php:16
 #: template-parts/content-single-trophy.php:25
 msgid "by"
 msgstr ""
 
 #: template-parts/content-single-game.php:36
+#: template-parts/content-single-steam_game.php:32
 msgid "Platform"
 msgstr "平台"
 
@@ -469,14 +482,17 @@ msgid "Play Count"
 msgstr "游玩次数"
 
 #: template-parts/content-single-game.php:69
+#: template-parts/content-single-steam_game.php:37
 msgid "Play Duration"
 msgstr "游玩时长"
 
 #: template-parts/content-single-game.php:70
+#: template-parts/content-single-steam_game.php:40
 msgid "h"
 msgstr "时"
 
 #: template-parts/content-single-game.php:70
+#: template-parts/content-single-steam_game.php:40
 msgid "m"
 msgstr "分"
 
@@ -501,6 +517,7 @@ msgid "Purchased"
 msgstr "已购买"
 
 #: template-parts/content-single-game.php:94
+#: template-parts/content-single-steam_game.php:47
 msgid "Description"
 msgstr "简介"
 
@@ -510,7 +527,7 @@ msgstr "获得于"
 
 #: template-parts/content-single-trophy.php:28
 msgid "Unearned"
-msgstr ""
+msgstr "未获得"
 
 #: template-parts/content-single-trophy.php:35
 msgid "From Game"
@@ -519,6 +536,14 @@ msgstr "来自游戏"
 #: template-parts/content-single-trophy.php:58
 msgid "Trophy Progress"
 msgstr "奖杯进程"
+
+#: template-parts/content-steam_games.php:12
+msgid "Recent Steam Games"
+msgstr "最近Steam游戏"
+
+#: template-parts/content-trophies.php:19
+msgid "Recent PlayStation Trophies"
+msgstr "最近PlayStation奖杯"
 
 #. Theme Name of the plugin/theme
 msgid "PSN"
@@ -559,6 +584,9 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "TEST"
 msgstr ""
+
+#~ msgid "Recent PSN Trophies"
+#~ msgstr "最近PSN奖杯"
 
 #~ msgid "Type"
 #~ msgstr "类型"

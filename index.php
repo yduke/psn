@@ -29,6 +29,12 @@ get_header();
 		?>
 	</div><!-- /.col -->
 
+	<div class="col-md-12">
+		<?php
+			get_template_part( 'template-parts/content', 'steam_games' );
+		?>
+	</div><!-- /.col -->
+
 </div><!-- /.row -->
 <?php
 get_footer();

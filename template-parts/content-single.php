@@ -9,6 +9,8 @@
 	get_template_part( 'template-parts/content', 'single-trophy' );
  }elseif(  $post_type == 'psn_game' ){
 	get_template_part( 'template-parts/content', 'single-game' );
+ }elseif(  $post_type == 'steam_game' ){
+	get_template_part( 'template-parts/content', 'single-steam_game' );
  }
 ?>
 
