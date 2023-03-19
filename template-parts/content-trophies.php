@@ -37,5 +37,5 @@
 </div>
     <?php }; ?>
     <div class="col-lg-12 text-center">
-    <a href="<?php echo get_post_type_archive_link( 'psn_trophy' ); ?>" class="btn btn-primary btn-lg"><?php _e('More','psn'); ?></a>
+    <a href="<?php echo get_post_type_archive_link( 'psn_trophy' ); ?>" class="mb-5 btn btn-primary btn-lg"><?php _e('More','psn'); ?></a>
     </div>
