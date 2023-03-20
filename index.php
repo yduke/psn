@@ -13,7 +13,7 @@ get_header();
 
 	<div class="col-md-12">
 		<?php
-			get_template_part( 'template-parts/content', 'player' );
+			get_template_part( 'template-parts/content', 'player-psn' );
 		?>
 	</div><!-- /.col -->
 
@@ -23,15 +23,26 @@ get_header();
 		?>
 	</div><!-- /.col -->
 
-	<div class="col-md-12">
+	<div class="col-md-12 mt-5">
 		<?php
 			get_template_part( 'template-parts/content', 'trophies' );
 		?>
 	</div><!-- /.col -->
 
+	<div class="col-md-12 mt-5">
+		<?php
+			get_template_part( 'template-parts/content', 'player-steam' );
+		?>
+	</div><!-- /.col -->
 	<div class="col-md-12">
 		<?php
 			get_template_part( 'template-parts/content', 'steam_games' );
+		?>
+	</div><!-- /.col -->
+
+	<div class="col-md-12 mt-5">
+		<?php
+			get_template_part( 'template-parts/content', 'steam_achievements' );
 		?>
 	</div><!-- /.col -->
 

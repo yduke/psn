@@ -10,8 +10,8 @@
 				<?php if ( has_post_thumbnail() ) { the_post_thumbnail('medium', array('class' => 'card-img-top'));  } ?>
 				</div>
             <div class="card-body">
-				<h2 class="card-title fs-6"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'psn' ), the_title_attribute( array( 'echo' => false ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-              	<div class="card-text small">
+				<h2 class="card-title fs-6 text-truncate"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'psn' ), the_title_attribute( array( 'echo' => false ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+              	<div class="card-text small text-truncate">
 					<?php
 					$post_type= get_post_type();
 					if($post_type=='psn_game'){

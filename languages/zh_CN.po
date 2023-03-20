@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-03-20 20:08+0800\n"
-"PO-Revision-Date: 2023-03-20 20:08+0800\n"
+"POT-Creation-Date: 2023-03-20 23:32+0800\n"
+"PO-Revision-Date: 2023-03-20 23:33+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -42,32 +42,36 @@ msgstr "最近PlayStation奖杯"
 msgid "Recent Steam Games"
 msgstr "最近Steam游戏"
 
-#: archive.php:22
+#: archive.php:21 template-parts/content-steam_achievements.php:11
+msgid "Recent Steam Achievements"
+msgstr "最近Steam成就"
+
+#: archive.php:24
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: archive.php:24
+#: archive.php:26
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: archive.php:24
+#: archive.php:26
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: archive.php:26
+#: archive.php:28
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: archive.php:26
+#: archive.php:28
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: archive.php:28
+#: archive.php:30
 msgid "Archives"
 msgstr "归档"
 
@@ -135,10 +139,16 @@ msgid "Never Played"
 msgstr "从未游玩"
 
 #: content-index.php:33 template-parts/content-games.php:35
+#: template-parts/content-player-psn.php:12
+#: template-parts/content-player-steam.php:9
+#: template-parts/content-player-steam.php:12
 #: template-parts/content-single-game.php:19
 #: template-parts/content-single-steam_game.php:16
 #: template-parts/content-single-steam_game.php:89
+#: template-parts/content-single-steam_trophy.php:16
 #: template-parts/content-single-trophy.php:24
+#: template-parts/content-steam_achievements-list.php:9
+#: template-parts/content-steam_achievements.php:25
 #: template-parts/content-steam_games.php:34
 #: template-parts/content-trophies-list.php:10
 #: template-parts/content-trophies.php:33
@@ -156,6 +166,7 @@ msgstr "抱歉，未找到任何结果。"
 #: content-single.php:29 content.php:49 image.php:46
 #: template-parts/content-single-game.php:95
 #: template-parts/content-single-steam_game.php:60
+#: template-parts/content-single-steam_trophy.php:43
 msgid "Pages:"
 msgstr "页："
 
@@ -163,6 +174,7 @@ msgstr "页："
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:101
 #: template-parts/content-single-steam_game.php:102
+#: template-parts/content-single-steam_trophy.php:50
 #: template-parts/content-single-trophy.php:66
 msgid "Edit"
 msgstr "编辑"
@@ -445,19 +457,37 @@ msgstr "分类"
 msgid "Tag: %s"
 msgstr "标签：%s"
 
-#: template-parts/content-games.php:42
-#: template-parts/content-steam_games.php:43
-#: template-parts/content-trophies.php:40
+#: template-parts/content-games.php:43
+#: template-parts/content-steam_achievements.php:32
+#: template-parts/content-steam_games.php:44
+#: template-parts/content-trophies.php:41
 msgid "More"
 msgstr "更多"
 
-#: template-parts/content-player.php:14
+#: template-parts/content-player-psn.php:11
 msgid "Level: "
 msgstr "等级："
 
-#: template-parts/content-player.php:15
+#: template-parts/content-player-psn.php:12
+#: template-parts/content-player-steam.php:12
 msgid "Last updated on: "
 msgstr "最后更新："
+
+#: template-parts/content-player-steam.php:7
+msgid "Game Count: "
+msgstr "游戏总数："
+
+#: template-parts/content-player-steam.php:9
+msgid "Last logoff: "
+msgstr "最后登出："
+
+#: template-parts/content-player-steam.php:10
+msgid "Account age: "
+msgstr "账号年龄："
+
+#: template-parts/content-player-steam.php:11
+msgid "Steam Country: "
+msgstr "账号国家："
 
 #: template-parts/content-single-game.php:18
 #: template-parts/content-single-steam_game.php:16
@@ -521,6 +551,7 @@ msgstr "已购买"
 
 #: template-parts/content-single-game.php:92
 #: template-parts/content-single-steam_game.php:57
+#: template-parts/content-single-steam_trophy.php:40
 msgid "Description"
 msgstr "简介"
 
@@ -528,17 +559,20 @@ msgstr "简介"
 msgid "Achievements"
 msgstr "成就"
 
+#: template-parts/content-single-steam_trophy.php:16
+#: template-parts/content-single-steam_trophy.php:27
 #: template-parts/content-single-trophy.php:23
 msgid "Earned on"
 msgstr "获得于"
 
-#: template-parts/content-single-trophy.php:26
-msgid "Unearned"
-msgstr "未获得"
-
+#: template-parts/content-single-steam_trophy.php:31
 #: template-parts/content-single-trophy.php:33
 msgid "From Game"
 msgstr "来自游戏"
+
+#: template-parts/content-single-trophy.php:26
+msgid "Unearned"
+msgstr "未获得"
 
 #: template-parts/content-single-trophy.php:56
 msgid "Trophy Progress"

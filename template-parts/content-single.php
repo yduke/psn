@@ -11,6 +11,8 @@
 	get_template_part( 'template-parts/content', 'single-game' );
  }elseif(  $post_type == 'steam_game' ){
 	get_template_part( 'template-parts/content', 'single-steam_game' );
+ }elseif(  $post_type == 'stm_trophy' ){
+	get_template_part( 'template-parts/content', 'single-steam_trophy' );
  }
 ?>
 

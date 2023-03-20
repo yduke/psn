@@ -17,6 +17,8 @@ if ( have_posts() ) :
 					}elseif($post_type=='post'){
 					}elseif($post_type=='steam_game'){
 						_e('Recent Steam Games','psn');
+					}elseif($post_type=='stm_trophy'){
+						_e('Recent Steam Achievements','psn');
 					}elseif($post_type=='post'){
 						if ( is_day() ) :
 							printf( esc_html__( 'Daily Archives: %s', 'psn' ), get_the_date() );

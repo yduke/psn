@@ -10,7 +10,7 @@
         if ( $posts->have_posts() ) {
     ?>
 <h2><?php _e('Recent PlayStation Games','psn');?></h2>
-<div class="list-group w-auto mb-5">
+<div class="list-group w-auto mb-2">
     <?php
         while ( $posts->have_posts() ) {
             $posts->the_post()
@@ -38,6 +38,7 @@
     <?php }; ?>
 </div>
     <?php }; ?>
-    <div class="mb-5 col-lg-12 text-center">
-    <a href="<?php echo get_post_type_archive_link( 'psn_game' ); ?>" class="btn btn-primary btn-lg"><?php _e('More','psn'); ?></a>
+
+    <div class="d-grid gap-2 mb-5">
+        <a href="<?php echo get_post_type_archive_link( 'psn_game' ); ?>" class="btn btn-primary btn-lg" role="button"><?php _e('More','psn'); ?></a>
     </div>

@@ -1,6 +1,3 @@
-<?php
-?>
-
     <div class="row mb-5">
       <div class="col-lg-12 text-center">
         
@@ -12,7 +9,7 @@
         <?php } ?>
         <p><?php echo get_option('psn_player_about'); ?></p>
         <p><?php echo __('Level: ','psn'). get_option('psn_player_level'); ?></p>
-        <p><?php echo __('Last updated on: ','psn'). get_option('psn_last_update'); ?></p>
+        <p><?php echo __('Last updated on: ','psn'). esc_html( human_time_diff( strtotime(get_option('psn_last_update')), current_time('timestamp') ) ). __(' ago','psn'); ?></p>
         <div class="row text-center">
             <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/platinum.png' ?>" alt="platinum" width="30"> <?php echo get_option('psn_player_platinum'); ?></div>
             <div class="col-3 themed-grid-col"><img src="<?php echo get_template_directory_uri() .'/assets//img/gold.png' ?>" alt="gold" width="30"> <?php echo get_option('psn_player_gold'); ?></div>
