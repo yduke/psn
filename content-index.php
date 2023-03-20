@@ -26,7 +26,13 @@
 				</div>
               	<div class="d-flex justify-content-between align-items-center">
 
-                	<small class="text-muted"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); ?></small>
+                	<small class="text-muted"><?php
+					if($post_type=='steam_game' && get_the_time('U') == 1041408000){
+						_e('Never Played','psn');
+					}else{
+						echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn');
+					}
+					?></small>
               	</div>
             </div>
 	</div><!-- /.col -->

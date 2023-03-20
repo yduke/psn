@@ -20,12 +20,20 @@
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
         <h6 class="mb-0"><?php the_title(); ?></h6>
-        <p class="mb-0 opacity-75"><?php  ?></p>
         <p class="mb-0 opacity-75"><?php
-
-               ?></p>
+              _e('Total duration:','psn');
+              $playtime = get_post_meta($post->ID,'playtime',true);
+              $hours = intdiv($playtime, 60).__('h', 'psn'). ($playtime % 60).__('m', 'psn');
+              echo ' '.$hours; ?></p>
+        <p class="mb-0 opacity-75">Steam</p>
       </div>
-      <small class="opacity-50 text-nowrap"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); ?></small>
+      <small class="opacity-50 text-nowrap"><?php 
+      if(get_the_time('U') == 1041408000){
+        _e('Never Played','psn');
+      }else{
+        echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn');
+      }
+       ?></small>
     </div>
   </a>
     <?php }; ?>

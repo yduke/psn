@@ -16,9 +16,7 @@
                     }
                 echo
                 __('Last Played on','psn').' '
-                .esc_attr( get_the_date() . ' - ' . get_the_time() )
-                .' '.__('by','psn').' '
-                .get_option('psn_player_id');
+                .esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ). __(' ago','psn')
                 ?>
         </div><!-- /.entry-meta -->
 

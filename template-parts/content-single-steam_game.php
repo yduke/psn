@@ -10,11 +10,11 @@
         <h2 class="display-5 fw-bold"><?php the_title(); ?></h2>
         <div class="entry-meta">
                 <?php
-                echo
-                __('Last Played on','psn').' '
-                .esc_attr( get_the_date() . ' - ' . get_the_time() )
-                .' '.__('by','psn').' '
-                .get_option('stm_name');
+                if(get_the_time('U') == 1041408000){
+                  _e('Never Played','psn');
+                }else{
+                  echo __('Last Played on','psn').' '.esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ). __(' ago','psn');
+                }
                 ?>
         </div><!-- /.entry-meta -->
 
@@ -32,12 +32,21 @@
               <td><?php _e('Platform','psn');?></td>
               <td>Steam</td>
             </tr>
+            <tr>
+              <td><?php _e('Last Played on','psn');?></td>
+              <td><?php 
+              if(get_the_time('U') == 1041408000){
+                _e('Never Played','psn');
+              }else{
+              echo get_the_time(get_option( 'date_format' ));
+              }
+              ?></td>
+            </tr>
 
             <tr>
               <td><?php _e('Play Duration','psn');?></td>
               <td><?php 
               $playtime = get_post_meta($post_id,'playtime',true);
-             
               $hours = intdiv($playtime, 60).__('h', 'psn'). ($playtime % 60).__('m', 'psn');
               echo $hours;
               ?></td>
