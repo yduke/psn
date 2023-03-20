@@ -25,9 +25,7 @@
 					?>
 				</div>
               	<div class="d-flex justify-content-between align-items-center">
-			  		<div class="btn-group mt-2">
-					  <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-sm"><?php _e('View','psn'); ?></a>
-                	</div>
+
                 	<small class="text-muted"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); ?></small>
               	</div>
             </div>

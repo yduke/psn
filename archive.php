@@ -11,9 +11,12 @@ if ( have_posts() ) :
 	<h1 class="page-title">
 		<?php
 					if($post_type=='psn_game'){
-						_e('Recent Games','psn');
+						_e('Recent PlayStation Games','psn');
 					}elseif($post_type=='psn_trophy'){
-						_e('Recent Trophies','psn');
+						_e('Recent PlayStation Trophies','psn');
+					}elseif($post_type=='post'){
+					}elseif($post_type=='steam_game'){
+						_e('Recent Steam Games','psn');
 					}elseif($post_type=='post'){
 						if ( is_day() ) :
 							printf( esc_html__( 'Daily Archives: %s', 'psn' ), get_the_date() );
