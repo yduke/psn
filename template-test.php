@@ -4,5 +4,19 @@ Template Name: TEST
 */
 header( 'Content-Type: application/json' );
 
-$ar = get_date_from_gmt( date("Y-m-d H:i:s", 1041379200), 'Y-m-d H:i:s' );
-var_dump($ar );
+$args = array(
+    'meta_query' => array(
+        array(
+            'key' => 'release_date',
+            'value' => '123'
+        )
+    ),
+    'post_type' => 'steam_game',
+    'posts_per_page' => -1,
+	'orderby'=>'rand'
+);
+$posts = get_posts($args);
+if($posts){
+	var_dump(reset($posts)->ID);
+}
+

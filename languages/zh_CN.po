@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-03-20 23:32+0800\n"
-"PO-Revision-Date: 2023-03-20 23:33+0800\n"
+"POT-Creation-Date: 2023-03-28 17:24+0800\n"
+"PO-Revision-Date: 2023-03-28 17:24+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -166,7 +166,7 @@ msgstr "抱歉，未找到任何结果。"
 #: content-single.php:29 content.php:49 image.php:46
 #: template-parts/content-single-game.php:95
 #: template-parts/content-single-steam_game.php:60
-#: template-parts/content-single-steam_trophy.php:43
+#: template-parts/content-single-steam_trophy.php:62
 msgid "Pages:"
 msgstr "页："
 
@@ -174,7 +174,7 @@ msgstr "页："
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:101
 #: template-parts/content-single-steam_game.php:102
-#: template-parts/content-single-steam_trophy.php:50
+#: template-parts/content-single-steam_trophy.php:69
 #: template-parts/content-single-trophy.php:66
 msgid "Edit"
 msgstr "编辑"
@@ -478,8 +478,8 @@ msgid "Game Count: "
 msgstr "游戏总数："
 
 #: template-parts/content-player-steam.php:9
-msgid "Last logoff: "
-msgstr "最后登出："
+msgid "Last online: "
+msgstr "最近上线："
 
 #: template-parts/content-player-steam.php:10
 msgid "Account age: "
@@ -551,7 +551,7 @@ msgstr "已购买"
 
 #: template-parts/content-single-game.php:92
 #: template-parts/content-single-steam_game.php:57
-#: template-parts/content-single-steam_trophy.php:40
+#: template-parts/content-single-steam_trophy.php:59
 msgid "Description"
 msgstr "简介"
 
