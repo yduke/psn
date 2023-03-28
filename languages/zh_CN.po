@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-03-28 17:24+0800\n"
-"PO-Revision-Date: 2023-03-28 17:24+0800\n"
+"POT-Creation-Date: 2023-03-29 00:07+0800\n"
+"PO-Revision-Date: 2023-03-29 00:08+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -80,9 +80,9 @@ msgstr "归档"
 msgid "About %s"
 msgstr "关于 %s"
 
-#: author-bio.php:23
+#: author-bio.php:23 template-parts/content-single-steam_game.php:128
 msgid "Website"
-msgstr ""
+msgstr "网站"
 
 #: author.php:21
 #, php-format
@@ -133,7 +133,7 @@ msgid "Permalink to %s"
 msgstr ""
 
 #: content-index.php:31 template-parts/content-single-steam_game.php:14
-#: template-parts/content-single-steam_game.php:39
+#: template-parts/content-single-steam_game.php:108
 #: template-parts/content-steam_games.php:32
 msgid "Never Played"
 msgstr "从未游玩"
@@ -144,7 +144,7 @@ msgstr "从未游玩"
 #: template-parts/content-player-steam.php:12
 #: template-parts/content-single-game.php:19
 #: template-parts/content-single-steam_game.php:16
-#: template-parts/content-single-steam_game.php:89
+#: template-parts/content-single-steam_game.php:171
 #: template-parts/content-single-steam_trophy.php:16
 #: template-parts/content-single-trophy.php:24
 #: template-parts/content-steam_achievements-list.php:9
@@ -165,7 +165,7 @@ msgstr "抱歉，未找到任何结果。"
 
 #: content-single.php:29 content.php:49 image.php:46
 #: template-parts/content-single-game.php:95
-#: template-parts/content-single-steam_game.php:60
+#: template-parts/content-single-steam_game.php:142
 #: template-parts/content-single-steam_trophy.php:62
 msgid "Pages:"
 msgstr "页："
@@ -173,7 +173,7 @@ msgstr "页："
 #: content-single.php:34 content.php:113 footer.php:48 functions.php:359
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:101
-#: template-parts/content-single-steam_game.php:102
+#: template-parts/content-single-steam_game.php:184
 #: template-parts/content-single-steam_trophy.php:69
 #: template-parts/content-single-trophy.php:66
 msgid "Edit"
@@ -491,12 +491,12 @@ msgstr "账号国家："
 
 #: template-parts/content-single-game.php:18
 #: template-parts/content-single-steam_game.php:16
-#: template-parts/content-single-steam_game.php:36
+#: template-parts/content-single-steam_game.php:105
 msgid "Last Played on"
 msgstr "最后游玩"
 
 #: template-parts/content-single-game.php:34
-#: template-parts/content-single-steam_game.php:32
+#: template-parts/content-single-steam_game.php:72
 msgid "Platform"
 msgstr "平台"
 
@@ -513,18 +513,18 @@ msgid "Play Count"
 msgstr "游玩次数"
 
 #: template-parts/content-single-game.php:67
-#: template-parts/content-single-steam_game.php:47
+#: template-parts/content-single-steam_game.php:116
 msgid "Play Duration"
 msgstr "游玩时长"
 
 #: template-parts/content-single-game.php:68
-#: template-parts/content-single-steam_game.php:50
+#: template-parts/content-single-steam_game.php:119
 #: template-parts/content-steam_games.php:26
 msgid "h"
 msgstr "时"
 
 #: template-parts/content-single-game.php:68
-#: template-parts/content-single-steam_game.php:50
+#: template-parts/content-single-steam_game.php:119
 #: template-parts/content-steam_games.php:26
 msgid "m"
 msgstr "分"
@@ -550,12 +550,32 @@ msgid "Purchased"
 msgstr "已购买"
 
 #: template-parts/content-single-game.php:92
-#: template-parts/content-single-steam_game.php:57
+#: template-parts/content-single-steam_game.php:139
 #: template-parts/content-single-steam_trophy.php:59
 msgid "Description"
 msgstr "简介"
 
-#: template-parts/content-single-steam_game.php:76
+#: template-parts/content-single-steam_game.php:36
+msgid "Local Name"
+msgstr "第二名称"
+
+#: template-parts/content-single-steam_game.php:49
+msgid "Release date"
+msgstr "发布日期"
+
+#: template-parts/content-single-steam_game.php:62
+msgid "Age Required"
+msgstr "年龄要求"
+
+#: template-parts/content-single-steam_game.php:81
+msgid "Price"
+msgstr "价格"
+
+#: template-parts/content-single-steam_game.php:95
+msgid "Metacritic Score"
+msgstr "Metacritic评分"
+
+#: template-parts/content-single-steam_game.php:158
 msgid "Achievements"
 msgstr "成就"
 

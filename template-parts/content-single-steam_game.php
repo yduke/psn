@@ -28,10 +28,79 @@
               <td><?php _e('Name','psn');?></td>
               <td><?php the_title();?></td>
             </tr>
+
+            <?php $name_localized = get_post_meta($post_id,'name_localized',true);
+            if(''!=$name_localized && $name_localized != get_the_title()){
+              ?>
+            <tr>
+              <td><?php _e('Local Name','psn');?></td>
+              <td>
+              <?php echo $name_localized; ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
+            <?php $release_date = get_post_meta($post_id,'release_date',true);
+            if($release_date){
+              ?>
+            <tr>
+              <td><?php _e('Release date','psn');?></td>
+              <td>
+              <?php echo get_date_from_gmt( date("Y-m-d H:i:s",  $release_date), get_option( 'date_format' ) ); ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
+            <?php $required_age = get_post_meta($post_id,'required_age',true);
+            if($required_age){
+              ?>
+            <tr>
+              <td><?php _e('Age Required','psn');?></td>
+              <td>
+              <?php echo $required_age; ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
             <tr>
               <td><?php _e('Platform','psn');?></td>
               <td>Steam</td>
             </tr>
+
+            <?php $price = get_post_meta($post_id,'price',true);
+            if($price){
+              $cny = $price/100;
+              ?>
+            <tr>
+              <td><?php _e('Price','psn');?></td>
+              <td>
+              <?php echo number_format((float)$cny, 2, '.', '');; ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
+            <?php $metacritic = get_post_meta($post_id,'metacritic',true);
+            $metacritic_url = get_post_meta($post_id,'metacritic_url',true);
+            if($metacritic && $metacritic_url){
+              ?>
+            <tr>
+              <td><?php _e('Metacritic Score','psn');?></td>
+              <td>
+              <a href="<?php echo $metacritic_url; ?>" target="_blank"><?php echo $metacritic; ?></a>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
             <tr>
               <td><?php _e('Last Played on','psn');?></td>
               <td><?php 
@@ -51,6 +120,19 @@
               echo $hours;
               ?></td>
             </tr>
+
+            <?php $website = get_post_meta($post_id,'website',true);
+            if($website){
+              ?>
+            <tr>
+              <td><?php _e('Website','psn');?></td>
+              <td>
+              <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
           </tbody>
         </table>
         <?php if(get_the_content() !=''){ ?>
