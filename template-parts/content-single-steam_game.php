@@ -3,13 +3,20 @@
 
 
 <header class="entry-header">
-<div class="my-5 text-center">
+    <div class="my-5 text-center">
             <?php if ( has_post_thumbnail() ) :
                     echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'full' ) . '</div>';
             endif; ?>
         <h2 class="display-5 fw-bold"><?php the_title(); ?></h2>
         <div class="entry-meta">
                 <?php
+                                
+                $terms_p = get_the_terms( $post_id, 'game_publishers' ); 
+                if ($terms_p) {
+                  foreach ( $terms_p as $term ) { 
+                    echo '<p><span class="inc"><a href="'. esc_url( get_term_link( $term )). '">'.$term->name.'</a></span></p>';
+                  }
+                }
                 if(get_the_time('U') == 1041408000){
                   _e('Never Played','psn');
                 }else{
@@ -19,6 +26,16 @@
         </div><!-- /.entry-meta -->
 
     </div>
+
+      <?php
+      $terms = get_the_terms( $post_id , 'stm_game_genres' );
+      if (is_array($terms)){
+        foreach ( $terms as $term ) { 
+              echo '<a href="'.get_term_link($term->slug, 'stm_game_genres').'"><span class="badge text-bg-primary">'.$term->name.'</span></a> ';
+        }
+      }
+      ?>
+
 
 </header><!-- /.entry-header -->
 <div class="entry-content">
@@ -36,6 +53,23 @@
               <td><?php _e('Local Name','psn');?></td>
               <td>
               <?php echo $name_localized; ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
+            <?php $devs = get_the_terms( $post_id, 'game_developers' ); 
+            if($devs){
+              ?>
+            <tr>
+              <td><?php _e('Developers','psn');?></td>
+              <td>
+              <?php 
+                  foreach ( $devs as $dev ) { 
+                    echo '<a href="'.get_term_link($dev->slug, 'game_developers').'"><span class="badge text-bg-secondary">'.$dev->name.'</span></a> ';
+              }
+              ?>
               </td>
             </tr>
               <?php
@@ -135,6 +169,20 @@
             ?>
           </tbody>
         </table>
+        <div class="my-5">
+          <?php
+          $terms = get_the_terms( $post_id , 'stm_game_cat' );
+          if (is_array($terms)){
+            
+            foreach ( $terms as $term ) { 
+                  echo '<a href="'.get_term_link($term->slug, 'stm_game_cat').'"><span class="badge text-bg-dark">'.$term->name.'</span></a> ';
+
+            }
+          }
+          ?>
+        </div>
+
+
         <?php if(get_the_content() !=''){ ?>
         <h3><?php _e('Description','psn')?></h3>
         <p class="lead mb-4"><?php

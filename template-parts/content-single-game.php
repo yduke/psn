@@ -22,6 +22,15 @@
 
     </div>
 
+    <?php
+      $terms = get_the_terms( $post_id , 'game_genres' );
+      if (is_array($terms)){
+        foreach ( $terms as $term ) { 
+              echo '<a href="'.get_term_link($term->slug, 'game_genres').'"><span class="badge text-bg-primary">'.$term->name.'</span></a> ';
+        }
+      }
+      ?>
+
 </header><!-- /.entry-header -->
 <div class="entry-content">
         <table class="table table-striped table-sm">
@@ -44,20 +53,6 @@
                     echo __('Unknown','psn');
                 }
                ?></td>
-            </tr>
-            <tr>
-              <td><?php _e('Genre','psn');?></td>
-              <td><?php
-                          $taxonomy = 'game_genres';
-                          $terms = get_object_term_cache( $post->ID, $taxonomy );
-                          $output = '';
-                          foreach($terms as $term) {
-                              if(!empty($output))
-                                  $output .= ' | ';
-                                  $output .= '<span class="genre"><a href="'. esc_url( get_term_link( $term )). '">'.$term->name.'</a></span>';
-                              }
-                          echo $output;
-              ?></td>
             </tr>
             <tr>
               <td><?php _e('Play Count','psn');?></td>

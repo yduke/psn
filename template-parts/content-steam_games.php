@@ -20,12 +20,32 @@
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
         <h6 class="mb-0"><?php the_title(); ?></h6>
-        <p class="mb-0 opacity-75"><?php
-              _e('Total duration:','psn');
-              $playtime = get_post_meta($post->ID,'playtime',true);
-              $hours = intdiv($playtime, 60).__('h', 'psn'). ($playtime % 60).__('m', 'psn');
-              echo ' '.$hours; ?></p>
-        <p class="mb-0 opacity-75">Steam</p>
+        <p class="mb-0 opacity-75">
+        <?php
+          $terms_p = get_the_terms( $post->ID, 'game_publishers' ); 
+          if ($terms_p) {
+            foreach ( $terms_p as $term_p ) { 
+              echo $term_p->name;
+            }
+          }
+        ?>
+        </p>
+        <p class="mb-0 opacity-75">
+          <?php
+          $win = get_post_meta($post->ID,'platformWindows',true);
+          $mac = get_post_meta($post->ID,'platformMac',true);
+          $lnx = get_post_meta($post->ID,'platformLinux',true);
+          if($win){
+            echo 'Windows';
+          }
+          if($mac){
+            echo ' MacOS';
+          }
+          if($lnx){
+            echo ' Linux';
+          }
+          ?>
+        </p>
       </div>
       <small class="opacity-50 text-nowrap"><?php 
       if(get_the_time('U') == 1041408000){
