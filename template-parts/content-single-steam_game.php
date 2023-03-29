@@ -104,8 +104,40 @@
 
             <tr>
               <td><?php _e('Platform','psn');?></td>
-              <td>Steam</td>
+              <td>
+                <?php
+              $win = get_post_meta($post->ID,'platformWindows',true);
+              $mac = get_post_meta($post->ID,'platformMac',true);
+              $lnx = get_post_meta($post->ID,'platformLinux',true);
+              if($win){
+                echo 'Windows';
+              }
+              if($mac){
+                echo ' MacOS';
+              }
+              if($lnx){
+                echo ' Linux';
+              }
+              ?>
+             </td>
             </tr>
+
+            <?php $langs = get_the_terms( $post->ID, 'game_langs' ); 
+            if($langs){
+              ?>
+            <tr>
+              <td><?php _e('Languages','psn');?></td>
+              <td>
+              <?php 
+                  foreach ( $langs as $lan ) { 
+                    echo '<a href="'.get_term_link($lan->slug, 'game_langs').'"><span class="badge text-bg-light">'.$lan->name.'</span></a>';
+              }
+              ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
 
             <?php $price = get_post_meta($post_id,'price',true);
             if($price){
@@ -135,6 +167,19 @@
             }
             ?>
 
+            <?php $website = get_post_meta($post_id,'website',true);
+            if($website){
+              ?>
+            <tr>
+              <td><?php _e('Website','psn');?></td>
+              <td>
+              <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
             <tr>
               <td><?php _e('Last Played on','psn');?></td>
               <td><?php 
@@ -155,18 +200,7 @@
               ?></td>
             </tr>
 
-            <?php $website = get_post_meta($post_id,'website',true);
-            if($website){
-              ?>
-            <tr>
-              <td><?php _e('Website','psn');?></td>
-              <td>
-              <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
-              </td>
-            </tr>
-              <?php
-            }
-            ?>
+
           </tbody>
         </table>
         <div class="my-5">

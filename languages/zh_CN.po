@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-03-29 19:59+0800\n"
-"PO-Revision-Date: 2023-03-29 20:00+0800\n"
+"POT-Creation-Date: 2023-03-29 20:24+0800\n"
+"PO-Revision-Date: 2023-03-29 20:24+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -80,7 +80,7 @@ msgstr "归档"
 msgid "About %s"
 msgstr "关于 %s"
 
-#: author-bio.php:23 template-parts/content-single-steam_game.php:162
+#: author-bio.php:23 template-parts/content-single-steam_game.php:174
 msgid "Website"
 msgstr "网站"
 
@@ -133,7 +133,7 @@ msgid "Permalink to %s"
 msgstr ""
 
 #: content-index.php:31 template-parts/content-single-steam_game.php:21
-#: template-parts/content-single-steam_game.php:142
+#: template-parts/content-single-steam_game.php:187
 #: template-parts/content-steam_games.php:52
 msgid "Never Played"
 msgstr "从未游玩"
@@ -144,7 +144,7 @@ msgstr "从未游玩"
 #: template-parts/content-player-steam.php:12
 #: template-parts/content-single-game.php:19
 #: template-parts/content-single-steam_game.php:23
-#: template-parts/content-single-steam_game.php:219
+#: template-parts/content-single-steam_game.php:253
 #: template-parts/content-single-steam_trophy.php:16
 #: template-parts/content-single-trophy.php:24
 #: template-parts/content-steam_achievements-list.php:9
@@ -165,7 +165,7 @@ msgstr "抱歉，未找到任何结果。"
 
 #: content-single.php:29 content.php:49 image.php:46
 #: template-parts/content-single-game.php:90
-#: template-parts/content-single-steam_game.php:190
+#: template-parts/content-single-steam_game.php:224
 #: template-parts/content-single-steam_trophy.php:62
 msgid "Pages:"
 msgstr "页："
@@ -173,7 +173,7 @@ msgstr "页："
 #: content-single.php:34 content.php:113 footer.php:48 functions.php:359
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:96
-#: template-parts/content-single-steam_game.php:232
+#: template-parts/content-single-steam_game.php:266
 #: template-parts/content-single-steam_trophy.php:69
 #: template-parts/content-single-trophy.php:66
 msgid "Edit"
@@ -491,7 +491,7 @@ msgstr "账号国家："
 
 #: template-parts/content-single-game.php:18
 #: template-parts/content-single-steam_game.php:23
-#: template-parts/content-single-steam_game.php:139
+#: template-parts/content-single-steam_game.php:184
 msgid "Last Played on"
 msgstr "最后游玩"
 
@@ -509,17 +509,17 @@ msgid "Play Count"
 msgstr "游玩次数"
 
 #: template-parts/content-single-game.php:62
-#: template-parts/content-single-steam_game.php:150
+#: template-parts/content-single-steam_game.php:195
 msgid "Play Duration"
 msgstr "游玩时长"
 
 #: template-parts/content-single-game.php:63
-#: template-parts/content-single-steam_game.php:153
+#: template-parts/content-single-steam_game.php:198
 msgid "h"
 msgstr "时"
 
 #: template-parts/content-single-game.php:63
-#: template-parts/content-single-steam_game.php:153
+#: template-parts/content-single-steam_game.php:198
 msgid "m"
 msgstr "分"
 
@@ -544,7 +544,7 @@ msgid "Purchased"
 msgstr "已购买"
 
 #: template-parts/content-single-game.php:87
-#: template-parts/content-single-steam_game.php:187
+#: template-parts/content-single-steam_game.php:221
 #: template-parts/content-single-steam_trophy.php:59
 msgid "Description"
 msgstr "简介"
@@ -565,15 +565,19 @@ msgstr "发布日期"
 msgid "Age Required"
 msgstr "年龄要求"
 
-#: template-parts/content-single-steam_game.php:115
+#: template-parts/content-single-steam_game.php:129
+msgid "Languages"
+msgstr "语言"
+
+#: template-parts/content-single-steam_game.php:147
 msgid "Price"
 msgstr "价格"
 
-#: template-parts/content-single-steam_game.php:129
+#: template-parts/content-single-steam_game.php:161
 msgid "Metacritic Score"
 msgstr "Metacritic评分"
 
-#: template-parts/content-single-steam_game.php:206
+#: template-parts/content-single-steam_game.php:240
 msgid "Achievements"
 msgstr "成就"
 
