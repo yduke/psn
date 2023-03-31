@@ -55,13 +55,6 @@
             </tr>
           </tbody>
         </table>
-        <?php if(get_the_content() !=''){ ?>
-        <h3><?php _e('Description','psn')?></h3>
-        <p class="lead mb-4"><?php
-            the_content();
-            wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'psn' ) . '</span>', 'after' => '</div>' ) );
-            ?></p>
-            <?php } ?>
 
 </div><!-- /.entry-content -->
 
