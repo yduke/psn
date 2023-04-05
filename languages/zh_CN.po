@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-03-29 20:24+0800\n"
-"PO-Revision-Date: 2023-03-29 20:24+0800\n"
+"POT-Creation-Date: 2023-04-05 21:16+0800\n"
+"PO-Revision-Date: 2023-04-05 21:17+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -80,7 +80,7 @@ msgstr "归档"
 msgid "About %s"
 msgstr "关于 %s"
 
-#: author-bio.php:23 template-parts/content-single-steam_game.php:174
+#: author-bio.php:23 template-parts/content-single-steam_game.php:176
 msgid "Website"
 msgstr "网站"
 
@@ -127,24 +127,24 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-index.php:13 content.php:15 content.php:23 sidebar.php:46
+#: content-index.php:26 content.php:15 content.php:23 sidebar.php:46
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-index.php:31 template-parts/content-single-steam_game.php:21
-#: template-parts/content-single-steam_game.php:187
+#: content-index.php:44 template-parts/content-single-steam_game.php:21
+#: template-parts/content-single-steam_game.php:189
 #: template-parts/content-steam_games.php:52
 msgid "Never Played"
 msgstr "从未游玩"
 
-#: content-index.php:33 template-parts/content-games.php:35
+#: content-index.php:46 template-parts/content-games.php:35
 #: template-parts/content-player-psn.php:12
 #: template-parts/content-player-steam.php:9
 #: template-parts/content-player-steam.php:12
 #: template-parts/content-single-game.php:19
 #: template-parts/content-single-steam_game.php:23
-#: template-parts/content-single-steam_game.php:253
+#: template-parts/content-single-steam_game.php:255
 #: template-parts/content-single-steam_trophy.php:16
 #: template-parts/content-single-trophy.php:24
 #: template-parts/content-steam_achievements-list.php:9
@@ -165,16 +165,15 @@ msgstr "抱歉，未找到任何结果。"
 
 #: content-single.php:29 content.php:49 image.php:46
 #: template-parts/content-single-game.php:90
-#: template-parts/content-single-steam_game.php:224
-#: template-parts/content-single-steam_trophy.php:62
+#: template-parts/content-single-steam_game.php:226
 msgid "Pages:"
 msgstr "页："
 
 #: content-single.php:34 content.php:113 footer.php:48 functions.php:359
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:96
-#: template-parts/content-single-steam_game.php:266
-#: template-parts/content-single-steam_trophy.php:69
+#: template-parts/content-single-steam_game.php:268
+#: template-parts/content-single-steam_trophy.php:62
 #: template-parts/content-single-trophy.php:66
 msgid "Edit"
 msgstr "编辑"
@@ -491,7 +490,7 @@ msgstr "账号国家："
 
 #: template-parts/content-single-game.php:18
 #: template-parts/content-single-steam_game.php:23
-#: template-parts/content-single-steam_game.php:184
+#: template-parts/content-single-steam_game.php:186
 msgid "Last Played on"
 msgstr "最后游玩"
 
@@ -509,17 +508,17 @@ msgid "Play Count"
 msgstr "游玩次数"
 
 #: template-parts/content-single-game.php:62
-#: template-parts/content-single-steam_game.php:195
+#: template-parts/content-single-steam_game.php:197
 msgid "Play Duration"
 msgstr "游玩时长"
 
 #: template-parts/content-single-game.php:63
-#: template-parts/content-single-steam_game.php:198
+#: template-parts/content-single-steam_game.php:200
 msgid "h"
 msgstr "时"
 
 #: template-parts/content-single-game.php:63
-#: template-parts/content-single-steam_game.php:198
+#: template-parts/content-single-steam_game.php:200
 msgid "m"
 msgstr "分"
 
@@ -544,8 +543,7 @@ msgid "Purchased"
 msgstr "已购买"
 
 #: template-parts/content-single-game.php:87
-#: template-parts/content-single-steam_game.php:221
-#: template-parts/content-single-steam_trophy.php:59
+#: template-parts/content-single-steam_game.php:223
 msgid "Description"
 msgstr "简介"
 
@@ -573,11 +571,11 @@ msgstr "语言"
 msgid "Price"
 msgstr "价格"
 
-#: template-parts/content-single-steam_game.php:161
-msgid "Metacritic Score"
-msgstr "Metacritic评分"
+#: template-parts/content-single-steam_game.php:162
+msgid "Score"
+msgstr "评分"
 
-#: template-parts/content-single-steam_game.php:240
+#: template-parts/content-single-steam_game.php:242
 msgid "Achievements"
 msgstr "成就"
 
@@ -639,6 +637,9 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "TEST"
 msgstr ""
+
+#~ msgid "Metacritic Score"
+#~ msgstr "Metacritic评分"
 
 #~ msgid "Genre"
 #~ msgstr "风格"
