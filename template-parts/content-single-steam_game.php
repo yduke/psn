@@ -7,7 +7,7 @@
             <?php if ( has_post_thumbnail() ) :
                     echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'full' ) . '</div>';
             endif; ?>
-        <h2 class="display-5 fw-bold"><?php the_title(); ?></h2>
+        <h2 class="display-5 fw-bold"><i class="iconfont icon-steam size-m"></i><?php the_title(); ?></h2>
         <div class="entry-meta">
                 <?php
                                 
@@ -110,13 +110,13 @@
               $mac = get_post_meta($post->ID,'platformMac',true);
               $lnx = get_post_meta($post->ID,'platformLinux',true);
               if($win){
-                echo 'Windows';
+                echo '<i class="iconfont icon-windows" title="Windows"></i>';
               }
               if($mac){
-                echo ' MacOS';
+                echo ' <i class="iconfont icon-mac" title="MacOS"></i>';
               }
               if($lnx){
-                echo ' Linux';
+                echo '  <i class="iconfont icon-steam" title="SteamOS"></i>';
               }
               ?>
              </td>
@@ -127,7 +127,7 @@
               ?>
             <tr>
               <td><?php _e('Languages','psn');?></td>
-              <td>
+              <td style="width: 70%;">
               <?php 
                   foreach ( $langs as $lan ) { 
                     echo '<a href="'.get_term_link($lan->slug, 'game_langs').'"><span class="badge text-bg-light">'.$lan->name.'</span></a>';
@@ -158,9 +158,11 @@
             if($metacritic && $metacritic_url){
               ?>
             <tr>
-              <td><?php _e('Metacritic Score','psn');?></td>
               <td>
-              <a href="<?php echo $metacritic_url; ?>" target="_blank"><?php echo $metacritic; ?></a>
+                <?php _e('Score','psn');?>
+            </td>
+              <td><svg class="icon" aria-hidden="true"><use xlink:href="#icon-metacritic"></use></svg>
+              <strong><a href="<?php echo $metacritic_url; ?>" target="_blank"><?php echo $metacritic; ?></a></strong>
               </td>
             </tr>
               <?php

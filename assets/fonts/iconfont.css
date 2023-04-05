@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3997831 */
+  src: url('iconfont.woff2?t=1680692975071') format('woff2'),
+       url('iconfont.woff?t=1680692975071') format('woff'),
+       url('iconfont.ttf?t=1680692975071') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-metacritic:before {
+  content: "\e63d";
+}
+
+.icon-achievement:before {
+  content: "\e8a5";
+}
+
+.icon-epic:before {
+  content: "\e8b1";
+}
+
+.icon-deck:before {
+  content: "\ecbf";
+}
+
+.icon-playstation:before {
+  content: "\ec18";
+}
+
+.icon-trophy:before {
+  content: "\e928";
+}
+
+.icon-mac:before {
+  content: "\e60b";
+}
+
+.icon-windows:before {
+  content: "\e64c";
+}
+
+.icon-steam:before {
+  content: "\e7cb";
+}
+

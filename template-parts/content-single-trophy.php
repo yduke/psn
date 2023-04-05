@@ -10,7 +10,7 @@
         <h2 class="display-5 fw-bold"><?php
                       $type = get_post_meta($post_id,'type',true);
                       if($type){ ?>
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/<?php echo $type;?>.png" alt="<?php echo $type;?>">
+                <i class="iconfont icon-trophy <?php echo $type;?> size-normal"></i>
                 <?php } 
         the_title(); ?></h2>
         <p class="lead mb-4">

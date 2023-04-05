@@ -36,13 +36,13 @@
           $mac = get_post_meta($post->ID,'platformMac',true);
           $lnx = get_post_meta($post->ID,'platformLinux',true);
           if($win){
-            echo 'Windows';
+            echo '<i class="iconfont icon-windows" title="Windows"></i>';
           }
           if($mac){
-            echo ' MacOS';
+            echo ' <i class="iconfont icon-mac" title="MacOS"></i>';
           }
           if($lnx){
-            echo ' Linux';
+            echo '  <i class="iconfont icon-steam" title="SteamOS"></i>';
           }
           ?>
         </p>

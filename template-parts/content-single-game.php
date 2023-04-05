@@ -7,7 +7,7 @@
             <?php if ( has_post_thumbnail() ) :
                     echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'medium' ) . '</div>';
             endif; ?>
-        <h2 class="display-5 fw-bold"><?php the_title(); ?></h2>
+        <h2 class="display-5 fw-bold"><i class="iconfont icon-playstation size-m"></i> <?php the_title(); ?></h2>
         <div class="entry-meta">
                 <?php
                     $terms = get_the_terms( $post->ID, 'game_publishers' ); 
