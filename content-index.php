@@ -7,14 +7,27 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'col px-1 mt-3' ); ?>>
 	<div class="card shadow-sm">
 		<div class="bg-secondary bg-opacity-25 bg-gradient">
-				<?php if ( has_post_thumbnail() ) { the_post_thumbnail('medium', array('class' => 'card-img-top'));  } ?>
+				<?php
+				if( $post_type=='steam_game'){
+					$img_lib = get_post_meta( $post->ID, 'img_library', true );
+					if($img_lib){
+					?>
+					<img src="<?php echo $img_lib; ?>" class="card-img-top">
+					<?php
+					}else{
+						if ( has_post_thumbnail() ) { the_post_thumbnail('medium', array('class' => 'card-img-top'));  };
+					}
+				}else{
+					if ( has_post_thumbnail() ) { the_post_thumbnail('medium', array('class' => 'card-img-top'));  }
+				}
+				?>
 				</div>
             <div class="card-body">
 				<h2 class="card-title fs-6 text-truncate"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'psn' ), the_title_attribute( array( 'echo' => false ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
               	<div class="card-text small text-truncate">
 					<?php
 					$post_type= get_post_type();
-					if($post_type=='psn_game'){
+					if($post_type=='psn_game' OR $post_type=='steam_game'){
 						$terms = get_the_terms( get_the_ID(), 'game_publishers' ); 
 						if($terms){
 							echo $terms[0]->name;
