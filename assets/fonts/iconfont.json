@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "15275936",
+      "name": "cib-playstation4",
+      "font_class": "ps4",
+      "unicode": "e747",
+      "unicode_decimal": 59207
+    },
+    {
+      "icon_id": "31702781",
+      "name": "playstation5",
+      "font_class": "ps5",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
       "icon_id": "23773749",
       "name": "logo-metacritic",
       "font_class": "metacritic",

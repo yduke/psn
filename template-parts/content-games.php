@@ -24,11 +24,11 @@
         <p class="mb-0 opacity-75"><?php
                $platform = get_post_meta(get_the_ID(),'game_platform',true);
                 if($platform == 'ps4_game'){
-                    echo 'PlayStation 4';
+                    echo '<i class="iconfont icon-ps4 size-l"></i>';
                 }elseif($platform == 'ps5_native_game'){
-                    echo 'PlayStation 5';
+                    echo '<i class="iconfont icon-ps5 size-l"></i>';
                 }elseif($platform == 'ps4_nongame_mini_app'){
-                    echo 'PlayStation 4 APP';
+                    echo 'APP';
                 }
                ?></p>
       </div>

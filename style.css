@@ -213,8 +213,21 @@ a img.aligncenter {
   }
 
 .iconfont.icon-playstation{
-color:#0072ce
+	color:#0072ce
   }
+
+  i.iconfont.icon-ps5, i.iconfont.icon-ps4{
+    font-size: 3em;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+i.iconfont.icon-ps5{
+	color: #000;
+}
+i.iconfont.icon-ps4{
+	color:#0072ce
+}
+
   .iconfont.icon-achievement{
 	color:#ffb100
   }
@@ -222,11 +235,11 @@ color:#0072ce
 	font-size:2em
 }
 .iconfont.size-m{
-font-size:1em;
-font-weight: normal;
+	font-size:1em;
+	font-weight: normal;
 }
 .iconfont.icon-trophy.size-normal{
- font-size:1em;
+	font-size:1em;
 }
 .platinum, .icon-trophy.platinum{
 	color: #9ab3e7;
