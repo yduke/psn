@@ -175,7 +175,7 @@
             <tr>
               <td><?php _e('Website','psn');?></td>
               <td>
-              <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
+              <a href="<?php echo $website; ?>" target="_blank"><?php  _e('Link','psn'); ?></a>
               </td>
             </tr>
               <?php

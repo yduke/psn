@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-04-05 21:16+0800\n"
-"PO-Revision-Date: 2023-04-05 21:17+0800\n"
+"POT-Creation-Date: 2023-04-11 17:34+0800\n"
+"PO-Revision-Date: 2023-04-11 17:35+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -574,6 +574,10 @@ msgstr "价格"
 #: template-parts/content-single-steam_game.php:162
 msgid "Score"
 msgstr "评分"
+
+#: template-parts/content-single-steam_game.php:178
+msgid "Link"
+msgstr "链接"
 
 #: template-parts/content-single-steam_game.php:242
 msgid "Achievements"
