@@ -3,19 +3,8 @@
 Template Name: TEST
 */
 header( 'Content-Type: application/json' );
-    $args = array(
-        'post_type' => 'steam_game',
-        'meta_query' => array(
-            array(
-                'key' => 'img_library',
-                'value' => '',
-                'compare' => 'NOT EXISTS'
-            )
-        ),
-        'posts_per_page' => -1,
-        'orderby'=>'rand'
-    );
-    $posts = get_posts($args);
-	$post_id = reset($posts)->ID;
-	$appid = get_post_meta($post_id, 'appid',true);
-	var_dump($appid);
+    // $wp_upload_dir = wp_upload_dir();
+    // $local_url= $path = $wp_upload_dir['basedir'].'/'.'dk-steam/appdetails/'.'123'.'.json';
+	// $ldetail =  get_remote_json($local_url);
+$d = GetGameDetail('1942280');
+var_dump($d);
