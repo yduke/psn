@@ -545,3 +545,12 @@ function psn_scripts_loader() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'psn_scripts_loader' );
+
+//check for update
+require get_template_directory() . '/inc/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://update.dukeyin.com/?action=get_metadata&slug=psn',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'psn'
+);
