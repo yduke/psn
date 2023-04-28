@@ -21,7 +21,7 @@
         </div><!-- /.entry-meta -->
 
     </div>
-
+    <div class="text-center"><?php echo do_shortcode( '[yasr_visitor_votes]' );?></div>
     <?php
       $terms = get_the_terms( $post_id , 'game_genres' );
       if (is_array($terms)){
@@ -33,6 +33,7 @@
 
 </header><!-- /.entry-header -->
 <div class="entry-content">
+  
         <table class="table table-striped table-sm">
           <tbody>
             <tr>
