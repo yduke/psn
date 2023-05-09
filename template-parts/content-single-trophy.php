@@ -48,10 +48,10 @@
               <h3><?php echo $term_name; ?></h3>
             </div>
           <div class="row">
-            <div class="col-3  pb-3"><img src="<?php echo get_template_directory_uri();?>/assets/img/platinum.png" alt="platinum" width="20"> <?php echo get_term_meta( $term_id, 'earnedTrophiesPlatinumCount', true);?></div>
-            <div class="col-3 pb-3"><img src="<?php echo get_template_directory_uri();?>/assets/img/gold.png" alt="gold" width="20"> <?php echo get_term_meta( $term_id, 'earnedTrophiesGoldCount', true).'/'.get_term_meta( $term_id, 'goldTrophyCount', true);?></div>
-            <div class="col-3 pb-3"><img src="<?php echo get_template_directory_uri();?>/assets/img/silver.png" alt="silver" width="20"> <?php echo get_term_meta( $term_id, 'earnedTrophiesSilverCount', true).'/'.get_term_meta( $term_id, 'silverTrophyCount', true);?></div>
-            <div class="col-3 pb-3"><img src="<?php echo get_template_directory_uri();?>/assets/img/bronze.png" alt="bronze" width="20"> <?php echo get_term_meta( $term_id, 'earnedTrophiesBronzeCount', true).'/'.get_term_meta( $term_id, 'bronzeTrophyCount', true);?></div>
+            <div class="col-3  pb-3"><i class="iconfont icon-trophy platinum"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesPlatinumCount', true);?></div>
+            <div class="col-3 pb-3"><i class="iconfont icon-trophy gold"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesGoldCount', true).'/'.get_term_meta( $term_id, 'goldTrophyCount', true);?></div>
+            <div class="col-3 pb-3"><i class="iconfont icon-trophy silver"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesSilverCount', true).'/'.get_term_meta( $term_id, 'silverTrophyCount', true);?></div>
+            <div class="col-3 pb-3"><i class="iconfont icon-trophy bronze"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesBronzeCount', true).'/'.get_term_meta( $term_id, 'bronzeTrophyCount', true);?></div>
           </div>
           <p><?php _e('Trophy Progress','psn');?></p>
           <div class="progress">

@@ -16,17 +16,17 @@ if ( post_password_required() ) {
 	<?php
 		if ( comments_open() && ! have_comments() ) :
 	?>
-		<h2 id="comments-title">
+		<h4 id="comments-title">
 			<?php
 				esc_html_e( 'No Comments yet!', 'psn' );
 			?>
-		</h2>
+		</h4>
 	<?php
 		endif;
 
 		if ( have_comments() ) :
 	?>
-		<h2 id="comments-title">
+		<h4 id="comments-title">
 			<?php
 				$comments_number = get_comments_number();
 				if ( '1' === $comments_number ) {
@@ -46,7 +46,7 @@ if ( post_password_required() ) {
 					);
 				}
 			?>
-		</h2>
+		</h4>
 		<?php
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
@@ -87,7 +87,7 @@ if ( post_password_required() ) {
 		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<h2 id="comments-title" class="nocomments"><?php esc_html_e( 'Comments are closed.', 'psn' ); ?></h2>
+		<h4 id="comments-title" class="nocomments"><?php esc_html_e( 'Comments are closed.', 'psn' ); ?></h4>
 	<?php
 		endif;
 
