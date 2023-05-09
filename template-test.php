@@ -4,4 +4,5 @@ Template Name: TEST
 */
 header( 'Content-Type: application/json' );
 
-var_dump(__FILE__);
+
+psn_set_trophy_to_game();

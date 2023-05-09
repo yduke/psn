@@ -91,6 +91,53 @@
             wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'psn' ) . '</span>', 'after' => '</div>' ) );
             ?></p>
             <?php } ?>
+<?php if(has_term( '', 'trophy_groups' )){ ?>
+  <h3><?php _e('Trophies','psn');?></h3>
+  <div class="list-group w-auto mb-5">
+    <?php
+      $trophies_list = get_the_terms( $post_id, 'trophy_groups' );
+      if (is_array($trophies_list)){
+        $tg = reset($trophies_list);
+        $t_slug = $tg->slug;
+      }
+        $query_meta = array(
+          'post_type' => 'psn_trophy',
+          'orderby' => 'post_date',
+          'posts_per_page'=>'-1',
+          'tax_query' => array(
+            array(
+                'taxonomy' => 'trophy_groups',
+                'field' => 'slug',
+                'terms' => $t_slug,
+            ),
+          ),
+      );
+      $trophies = new WP_Query( $query_meta );
+      if($trophies->have_posts()){
+        while ( $trophies->have_posts() ) {
+          $trophies->the_post();
+          $earned = get_post_meta(get_the_ID(),'earned',true);
+          $t_color = get_post_meta(get_the_ID(),'type',true);
+          ?>
+          <a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3 <?php if($earned == '0'){echo 'grayscale';}?>" aria-current="true">
+            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="<?php the_title(); ?>" width="75" height="75" class="rounded-3 flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h5 class="mb-0"><i class="iconfont icon-trophy <?php echo $t_color; ?>"></i><?php the_title(); ?></h5>
+                <p class="mb-0 opacity-75"><?php the_excerpt(); ?></p>
+              </div>
+              <small class="opacity-50 text-nowrap"><?php if($earned == '1'){echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); }else{echo __('Unearned','psn'); }?></small>
+            </div>
+          </a>
+                            <?php
+        }
+      }
+    ?>
+  </div>
+
+<?php } ?>
+
+
 </div><!-- /.entry-content -->
 
 <?php
