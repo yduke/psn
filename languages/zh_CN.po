@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-05-09 22:12+0800\n"
-"PO-Revision-Date: 2023-05-09 22:21+0800\n"
+"POT-Creation-Date: 2023-05-10 20:54+0800\n"
+"PO-Revision-Date: 2023-05-10 20:57+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -42,19 +42,19 @@ msgstr "最近PlayStation奖杯"
 msgid "Recent Steam Games"
 msgstr "最近Steam游戏"
 
-#: archive.php:21 template-parts/content-steam_achievements.php:11
+#: archive.php:21 template-parts/content-steam_achievements.php:13
 msgid "Recent Steam Achievements"
 msgstr "最近Steam成就"
 
 #: archive.php:24
 #, php-format
 msgid "Daily Archives: %s"
-msgstr ""
+msgstr "日归档：%s"
 
 #: archive.php:26
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr ""
+msgstr "月归档：%s"
 
 #: archive.php:26
 msgctxt "monthly archives date format"
@@ -64,7 +64,7 @@ msgstr ""
 #: archive.php:28
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr ""
+msgstr "年归档：%s"
 
 #: archive.php:28
 msgctxt "yearly archives date format"
@@ -87,12 +87,12 @@ msgstr "网站"
 #: author.php:21
 #, php-format
 msgid "Author Archives: %s"
-msgstr ""
+msgstr "作者归档：%s"
 
 #: category.php:11
 #, php-format
 msgid "Category Archives: %s"
-msgstr ""
+msgstr "分类归档：%s"
 
 #: comments.php:21
 msgid "No Comments yet!"
@@ -145,11 +145,11 @@ msgstr "从未游玩"
 #: template-parts/content-single-game.php:19
 #: template-parts/content-single-game.php:158
 #: template-parts/content-single-steam_game.php:23
-#: template-parts/content-single-steam_game.php:255
-#: template-parts/content-single-steam_trophy.php:16
+#: template-parts/content-single-steam_game.php:265
+#: template-parts/content-single-steam_trophy.php:22
 #: template-parts/content-single-trophy.php:24
 #: template-parts/content-steam_achievements-list.php:9
-#: template-parts/content-steam_achievements.php:25
+#: template-parts/content-steam_achievements.php:27
 #: template-parts/content-steam_games.php:54
 #: template-parts/content-trophies-list.php:10
 #: template-parts/content-trophies.php:33
@@ -173,8 +173,8 @@ msgstr "页："
 #: content-single.php:34 content.php:113 footer.php:48 functions.php:359
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
 #: page.php:27 sidebar.php:18 template-parts/content-single-game.php:173
-#: template-parts/content-single-steam_game.php:268
-#: template-parts/content-single-steam_trophy.php:62
+#: template-parts/content-single-steam_game.php:292
+#: template-parts/content-single-steam_trophy.php:69
 #: template-parts/content-single-trophy.php:66
 msgid "Edit"
 msgstr "编辑"
@@ -235,7 +235,7 @@ msgstr "更多"
 #: footer.php:18
 #, php-format
 msgid "&copy; %1$s %2$s. All rights reserved."
-msgstr ""
+msgstr "&copy; %1$s %2$s 保留所有版权。"
 
 #: functions.php:206
 msgid "Older posts"
@@ -484,7 +484,7 @@ msgstr "搜索 %s 结果："
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
-msgstr ""
+msgstr "抱歉，未找到相关内容。请用不同的关键字检索。"
 
 #: sidebar.php:35
 msgid "Recent Posts"
@@ -500,7 +500,7 @@ msgid "Tag: %s"
 msgstr "标签：%s"
 
 #: template-parts/content-games.php:43
-#: template-parts/content-steam_achievements.php:32
+#: template-parts/content-steam_achievements.php:34
 #: template-parts/content-steam_games.php:64
 #: template-parts/content-trophies.php:41
 msgid "More"
@@ -600,6 +600,9 @@ msgid "Trophy Progress"
 msgstr "奖杯进程"
 
 #: template-parts/content-single-game.php:158
+#: template-parts/content-single-steam_game.php:268
+#: template-parts/content-single-steam_trophy.php:21
+#: template-parts/content-single-steam_trophy.php:35
 #: template-parts/content-single-trophy.php:26
 msgid "Unearned"
 msgstr "未获得"
@@ -640,13 +643,17 @@ msgstr "链接"
 msgid "Achievements"
 msgstr "成就"
 
-#: template-parts/content-single-steam_trophy.php:16
-#: template-parts/content-single-steam_trophy.php:27
+#: template-parts/content-single-steam_game.php:249
+msgid "Achievement Progress"
+msgstr "成就进度"
+
+#: template-parts/content-single-steam_trophy.php:22
+#: template-parts/content-single-steam_trophy.php:34
 #: template-parts/content-single-trophy.php:23
 msgid "Earned on"
 msgstr "获得于"
 
-#: template-parts/content-single-steam_trophy.php:31
+#: template-parts/content-single-steam_trophy.php:38
 #: template-parts/content-single-trophy.php:33
 msgid "From Game"
 msgstr "来自游戏"
