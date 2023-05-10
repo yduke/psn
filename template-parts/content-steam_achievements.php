@@ -3,7 +3,9 @@
             'orderby'           => 'date',
             'posts_per_page'    => 10,
             'post_type'         => 'stm_trophy',
-            'ignore_sticky_posts' => 1
+            'ignore_sticky_posts' => 1,
+            'meta_key' => 'achieved',
+            'meta_value' => '1'
         );
         $posts = new WP_Query( $args );
         if ( $posts->have_posts() ) {
