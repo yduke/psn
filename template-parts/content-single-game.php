@@ -69,7 +69,7 @@
             </tr>
             <tr>
               <td><?php _e('Last Played On','psn');?></td>
-              <td><?php echo gmt_to_local(get_post_meta($post_id,'game_lastPlayedDateTime',true));?></td>
+              <td><?php echo psngmt_to_local(get_post_meta($post_id,'game_lastPlayedDateTime',true));?></td>
             </tr>
             <tr>
               <td><?php _e('Obtained from','psn');?></td>
