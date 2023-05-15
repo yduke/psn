@@ -83,11 +83,11 @@
             </tr>
             <tr>
               <td><?php _e('First Played On','psn');?></td>
-              <td><?php echo get_post_meta($post_id,'game_firstPlayedDateTime_l',true);?></td>
+              <td><?php echo  esc_html( human_time_diff( strtotime(date( 'Y-m-d H:i:s', strtotime(get_post_meta($post_id,'game_firstPlayedDateTime_l',true ))), current_time('timestamp') ) )) . __(' ago','dk-psn');echo ' (' .get_post_meta($post_id,'game_firstPlayedDateTime_l',true).')'; ?></td>
             </tr>
             <tr>
               <td><?php _e('Last Played On','psn');?></td>
-              <td><?php echo psngmt_to_local(get_post_meta($post_id,'game_lastPlayedDateTime',true));?></td>
+              <td><?php $lpt =psngmt_to_local(get_post_meta($post_id,'game_lastPlayedDateTime',true));  echo  esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','dk-psn');echo ' (' .$lpt.')'; ?></td>
             </tr>
             <tr>
               <td><?php _e('Obtained from','psn');?></td>

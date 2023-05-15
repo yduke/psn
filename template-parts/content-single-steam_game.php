@@ -188,7 +188,9 @@
               if(get_the_time('U') == 1041408000){
                 _e('Never Played','psn');
               }else{
-              echo get_the_time(get_option( 'date_format' ));
+                $lpt = get_the_time(get_option( 'date_format' )); 
+                echo esc_html( human_time_diff( get_the_time('U'), current_time('U') ) ) . __(' ago','dk-psn');
+                echo ' (' .$lpt.')';
               }
               ?></td>
             </tr>
