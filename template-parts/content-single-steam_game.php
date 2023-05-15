@@ -276,7 +276,7 @@ if($achieved_count!='' && $achieved_earned !='' ){
         <h5 class="mb-0"><?php the_title(); ?></h5>
         <p class="mb-0 opacity-75"><?php the_excerpt(); ?></p>
       </div>
-      <small class="opacity-50 text-nowrap"><?php echo $unlocktime; ?></small>
+      <small class="position-absolute top-0 end-0 me-2 opacity-50 text-nowrap"><?php echo $unlocktime; ?></small>
     </div>
   </a>
                     <?php

@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: Duke Yin
 Author URI: https://www.dukeyin.com
 Description: The psn example theme.
-Version: 3.4.4
+Version: 3.4.5
 Requires at least: 5.0
 Tested up to: 6.1
 Requires PHP: 7.2
@@ -242,6 +242,12 @@ i.iconfont.icon-ps4{
 .iconfont.icon-trophy.size-normal{
 	font-size:1em;
 }
+@media all and (max-width: 1200px) {
+	.iconfont.icon-trophy.size-normal-s{
+		font-size:1em;
+	}
+  }
+
 .platinum, .icon-trophy.platinum{
 	color: #9ab3e7;
 }

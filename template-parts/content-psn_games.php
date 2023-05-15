@@ -32,7 +32,7 @@
                 }
                ?></p>
       </div>
-      <small class="opacity-50 text-nowrap"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); ?></small>
+      <small class="position-absolute top-0 end-0 me-2 opacity-50 text-nowrap"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); ?></small>
     </div>
   </a>
     <?php }; ?>

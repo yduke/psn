@@ -55,6 +55,24 @@
                 }
                ?></td>
             </tr>
+            
+            <?php $langs = get_the_terms( $post->ID, 'game_langs' ); 
+            if($langs){
+              ?>
+            <tr>
+              <td><?php _e('Languages','psn');?></td>
+              <td style="width: 70%;">
+              <?php 
+                  foreach ( $langs as $lan ) { 
+                    echo '<a href="'.get_term_link($lan->slug, 'game_langs').'"><span class="badge text-bg-light">'.$lan->name.'</span></a>';
+              }
+              ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
             <tr>
               <td><?php _e('Play Count','psn');?></td>
               <td><?php echo get_post_meta($post_id,'game_playCount',true);?></td>
@@ -106,14 +124,14 @@
           <img class="rounded-3" src="<?php echo $term_cover; ?>" >
           </div>
           <div class="col-md-9">
-            <div class="row">
+            <div class="row text-center">
               <h3><?php echo $term_name; ?></h3>
             </div>
           <div class="row">
-            <div class="col-3  pb-3"><i class="iconfont icon-trophy platinum"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesPlatinumCount', true);?></div>
-            <div class="col-3 pb-3"><i class="iconfont icon-trophy gold"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesGoldCount', true).'/'.get_term_meta( $term_id, 'goldTrophyCount', true);?></div>
-            <div class="col-3 pb-3"><i class="iconfont icon-trophy silver"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesSilverCount', true).'/'.get_term_meta( $term_id, 'silverTrophyCount', true);?></div>
-            <div class="col-3 pb-3"><i class="iconfont icon-trophy bronze"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesBronzeCount', true).'/'.get_term_meta( $term_id, 'bronzeTrophyCount', true);?></div>
+            <div class="col-3  pb-3"><i class="iconfont icon-trophy platinum size-normal-s"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesPlatinumCount', true);?></div>
+            <div class="col-3 pb-3"><i class="iconfont icon-trophy gold size-normal-s"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesGoldCount', true).'/'.get_term_meta( $term_id, 'goldTrophyCount', true);?></div>
+            <div class="col-3 pb-3"><i class="iconfont icon-trophy silver size-normal-s"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesSilverCount', true).'/'.get_term_meta( $term_id, 'silverTrophyCount', true);?></div>
+            <div class="col-3 pb-3"><i class="iconfont icon-trophy bronze size-normal-s"></i> <?php echo get_term_meta( $term_id, 'earnedTrophiesBronzeCount', true).'/'.get_term_meta( $term_id, 'bronzeTrophyCount', true);?></div>
           </div>
           <p><?php _e('Trophy Progress','psn');?></p>
           <div class="progress">
@@ -155,7 +173,7 @@
                 <h5 class="mb-0"><i class="iconfont icon-trophy <?php echo $t_color; ?>"></i><?php the_title(); ?></h5>
                 <p class="mb-0 opacity-75"><?php the_excerpt(); ?></p>
               </div>
-              <small class="opacity-50 text-nowrap"><?php if($earned == '1'){echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); }else{echo __('Unearned','psn'); }?></small>
+              <small class="position-absolute top-0 end-0 me-2 opacity-50 text-nowrap"><?php if($earned == '1'){echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','psn'); }else{echo __('Unearned','psn'); }?></small>
             </div>
           </a>
                             <?php

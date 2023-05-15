@@ -47,7 +47,7 @@
           ?>
         </p>
       </div>
-      <small class="opacity-50 text-nowrap"><?php 
+      <small class="position-absolute top-0 end-0 me-2 opacity-50 text-nowrap"><?php 
       if(get_the_time('U') == 1041408000){
         _e('Never Played','psn');
       }else{

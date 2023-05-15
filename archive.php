@@ -14,7 +14,6 @@ if ( have_posts() ) :
 						_e('Recent PlayStation Games','psn');
 					}elseif($post_type=='psn_trophy'){
 						_e('Recent PlayStation Trophies','psn');
-					}elseif($post_type=='post'){
 					}elseif($post_type=='steam_game'){
 						_e('Recent Steam Games','psn');
 					}elseif($post_type=='stm_trophy'){
@@ -30,7 +29,34 @@ if ( have_posts() ) :
 							esc_html_e( 'Archives', 'psn' );
 						endif;
 					}
-
+					if(is_tax('game_genres') || is_tax('stm_game_genres')){
+						$taxonomy = get_queried_object();
+						_e('Genre','psn');
+						echo  ': '.$taxonomy->name;
+					}elseif(is_tax('trophy_groups')){
+						$taxonomy = get_queried_object();
+						echo  $taxonomy->name;
+					}elseif(is_tax('game_publishers')){
+						$taxonomy = get_queried_object();
+						_e('Publisher','psn');
+						echo  ': '.$taxonomy->name;
+					}elseif(is_tax('game_developers')){
+						$taxonomy = get_queried_object();
+						_e('Developer','psn');
+						echo  ': '.$taxonomy->name;
+					}elseif(is_tax('game_platforms')){
+						$taxonomy = get_queried_object();
+						_e('Platform','psn');
+						echo  ': '.$taxonomy->name;
+					}elseif(is_tax('game_langs')){
+						$taxonomy = get_queried_object();
+						_e('Language support','psn');
+						echo  ': '.$taxonomy->name;
+					}elseif(is_tax('stm_game_cat')){
+						$taxonomy = get_queried_object();
+						_e('Game category','psn');
+						echo  ': '.$taxonomy->name;
+					}
 		?>
 	</h1>
 </header>

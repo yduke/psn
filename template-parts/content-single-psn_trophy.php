@@ -44,7 +44,7 @@
           <img class="rounded-3" src="<?php echo $term_cover; ?>" >
           </div>
           <div class="col-md-9">
-            <div class="row">
+            <div class="row text-center">
               <h3><?php echo $term_name; ?></h3>
             </div>
           <div class="row">

@@ -19,13 +19,13 @@ get_header();
 
 	<div class="col-md-12">
 		<?php
-			get_template_part( 'template-parts/content', 'games' );
+			get_template_part( 'template-parts/content', 'psn_games' );
 		?>
 	</div><!-- /.col -->
 
 	<div class="col-md-12 mt-5">
 		<?php
-			get_template_part( 'template-parts/content', 'trophies' );
+			get_template_part( 'template-parts/content', 'psn_trophies' );
 		?>
 	</div><!-- /.col -->
 
