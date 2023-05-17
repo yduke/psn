@@ -20,13 +20,14 @@
 <div class="list-group w-auto mb-2">
     <?php
         while ( $posts->have_posts() ) {
-            $posts->the_post()
+            $posts->the_post();
+            $t_color = get_post_meta(get_the_ID(),'type',true);
     ?>
   <a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
       <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); ?>" alt="<?php the_title(); ?>" width="75" height="75" class="flex-shrink-0 rounded-3 bg-secondary bg-opacity-25 bg-gradient">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
-        <h5 class="mb-0"><?php the_title(); ?></h5>
+        <h5 class="mb-0"><i class="iconfont icon-trophy <?php echo $t_color; ?>"></i><?php the_title(); ?></h5>
         <p class="mb-0 opacity-75"><?php echo get_the_excerpt(); ?></p>
         <p class="mb-0 badge bg-secondary text-wrap"><?php $terms = get_the_terms( $post->ID, 'trophy_groups' );$term_id = $terms[0]->term_id ?? '';$term_name = $terms[0]->name ?? ''; echo $term_name;?></p>
       </div>

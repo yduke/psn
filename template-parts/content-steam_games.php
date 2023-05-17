@@ -24,9 +24,7 @@
         <?php
           $terms_p = get_the_terms( $post->ID, 'game_publishers' ); 
           if ($terms_p) {
-            foreach ( $terms_p as $term_p ) { 
-              echo $term_p->name;
-            }
+            echo $terms_p[0]->name;
           }
         ?>
         </p>

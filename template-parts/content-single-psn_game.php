@@ -40,22 +40,55 @@
               <td><?php _e('Name','psn');?></td>
               <td><?php echo get_post_meta($post_id,'game_localizedName',true);?></td>
             </tr>
+
+            <?php $game_releaseDate = get_post_meta($post_id,'game_releaseDate',true); 
+            if($game_releaseDate && !str_starts_with($game_releaseDate, '1970')){
+              ?>
             <tr>
-              <td><?php _e('Platform','psn');?></td>
+              <td><?php _e('Release Date','psn');?></td>
+              <td style="width: 70%;">
+              <?php 
+                echo wp_date( get_option( 'date_format' ), strtotime($game_releaseDate));
+              ?>
+              </td>
+            </tr>
+            <?php
+            }
+            ?>
+
+            <?php $game_platforms = get_the_terms( $post->ID, 'game_platforms' ); 
+            if($game_platforms){
+              ?>
+            <tr>
+              <td><?php _e('Platform available','psn');?></td>
+              <td style="width: 70%;">
+              <?php 
+                  foreach ( $game_platforms as $game_platform ) { 
+                    echo '<a href="'.get_term_link($game_platform->slug, 'game_platforms').'"><span class="badge text-bg-light">'.$game_platform->name.'</span></a>';
+              }
+              ?>
+              </td>
+            </tr>
+            <?php
+            }
+            ?>
+
+            <tr>
+              <td><?php _e('Platform Played','psn');?></td>
               <td><?php
                $platform = get_post_meta($post_id,'game_platform',true);
                 if($platform == 'ps4_game'){
-                    echo 'PlayStation 4';
+                    echo 'PS4';
                 }elseif($platform == 'ps5_native_game'){
-                    echo 'PlayStation 5';
+                    echo 'PS5';
                 }elseif($platform == 'ps4_nongame_mini_app'){
-                    echo 'PlayStation 4 APP';
+                    echo 'PS4 APP';
                 }elseif($platform == 'unknown' || $platform == ''){
                     echo __('Unknown','psn');
                 }
                ?></td>
             </tr>
-            
+
             <?php $langs = get_the_terms( $post->ID, 'game_langs' ); 
             if($langs){
               ?>
@@ -83,11 +116,15 @@
             </tr>
             <tr>
               <td><?php _e('First Played On','psn');?></td>
-              <td><?php echo  esc_html( human_time_diff( strtotime(date( 'Y-m-d H:i:s', strtotime(get_post_meta($post_id,'game_firstPlayedDateTime_l',true ))), current_time('timestamp') ) )) . __(' ago','dk-psn');echo ' (' .get_post_meta($post_id,'game_firstPlayedDateTime_l',true).')'; ?></td>
+              <td><?php 
+              $ftpd = get_post_meta($post_id,'game_firstPlayedDateTime_l',true );
+              $ftp =date( 'Y-m-d H:i:s', strtotime( $ftpd ));
+              echo esc_html( human_time_diff( strtotime($ftp, current_time('timestamp',true) ) )) . __(' ago','dk-psn');
+              echo ' (' .date( get_option( 'date_format' ), strtotime( $ftpd )).')'; ?></td>
             </tr>
             <tr>
               <td><?php _e('Last Played On','psn');?></td>
-              <td><?php $lpt =psngmt_to_local(get_post_meta($post_id,'game_lastPlayedDateTime',true));  echo  esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','dk-psn');echo ' (' .$lpt.')'; ?></td>
+              <td><?php $lpt =get_the_time(get_option( 'date_format' )); echo  esc_html( human_time_diff( get_the_time('U'), current_time('timestamp',true) ) ) . __(' ago','dk-psn');echo ' (' .$lpt.')'; ?></td>
             </tr>
             <tr>
               <td><?php _e('Obtained from','psn');?></td>

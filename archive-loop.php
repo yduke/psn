@@ -5,14 +5,14 @@
 
 psn_content_nav( 'nav-above' );
 $post_type= get_post_type();
-if ( have_posts()  && $post_type=='psn_trophy'){
+if ( $post_type=='psn_trophy' && get_post_meta( get_the_id(), 'earned', true )=='1'){
 	?>
 		<div class="row">
 		<div class="col-md-12"><div class="list-group w-auto mb-5">
 		<?php
-			while ( have_posts() && get_post_meta( get_the_id(), 'earned', true )=='1') :
+			while ( have_posts() ) :
 				the_post();
-					get_template_part( 'template-parts/content', 'trophies-list' );
+					get_template_part( 'template-parts/content', 'psn_trophies-list' );
 			endwhile;
 		?>
 
@@ -20,12 +20,12 @@ if ( have_posts()  && $post_type=='psn_trophy'){
 		</div>
 		</div>
 	<?php
-}elseif ( have_posts()  && $post_type=='stm_trophy'){
+}elseif ( $post_type=='stm_trophy' && get_post_meta( get_the_id(), 'achieved', true )=='1'){
 	?>
 		<div class="row">
 		<div class="col-md-12"><div class="list-group w-auto mb-5">
 		<?php
-			while ( have_posts() && get_post_meta( get_the_id(), 'achieved', true )=='1') :
+			while ( have_posts() ) :
 				the_post();
 					get_template_part( 'template-parts/content', 'steam_achievements-list' );
 			endwhile;
@@ -35,7 +35,7 @@ if ( have_posts()  && $post_type=='psn_trophy'){
 		</div>
 		</div>
 	<?php
-}elseif(have_posts() && $post_type!='psn_trophy' && $post_type!='stm_trophy' ){
+}elseif( $post_type!='psn_trophy' && $post_type!='stm_trophy' ){
 	?>
 		<div class="row row-cols-2 row-cols-sm-2 row-cols-md-5 g-4">
 		<?php
