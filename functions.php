@@ -531,6 +531,7 @@ function psn_scripts_loader() {
 	wp_enqueue_style( 'main', get_theme_file_uri( 'assets/dist/main.css' ), array(), $theme_version, 'all' ); // main.scss: Compiled Framework source + custom styles.
 	wp_enqueue_style( 'iconfont', get_theme_file_uri( 'assets/fonts/iconfont.css' ), array(), $theme_version, 'all' ); // iconfont
 	wp_enqueue_style( 'customize', get_theme_file_uri( 'assets/customize.css' ), array(), $theme_version, 'all' ); // Customize.
+	wp_enqueue_style( 'extra', get_theme_file_uri( 'assets/extra.css' ), array(), $theme_version, 'all' ); // Extra.
 
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'rtl', get_theme_file_uri( 'assets/dist/rtl.css' ), array(), $theme_version, 'all' );

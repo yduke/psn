@@ -146,20 +146,28 @@
             wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'psn' ) . '</span>', 'after' => '</div>' ) );
             ?></div>
             <?php } ?>
-<?php if(has_term( '', 'trophy_groups' )){ ?>
-  <h3><?php _e('Trophies','psn');?></h3>
+<?php if(has_term( '', 'trophy_groups' )){  
+        $terms = get_the_terms( $post->ID, 'trophy_groups' );
+        $term_id = $terms[0]->term_id ?? '';
+        $term_name = $terms[0]->name ?? '';
+        $attachment_id = get_term_meta($term_id)["local_iconUrl"] ?? '';
+        $term_cover = wp_get_attachment_image_src( $attachment_id[0], 'thumbnail')[0] ?? '';
+        $progress = get_term_meta( $term_id, 'progress', true);
+?>
 
+  <h3><?php _e('Trophies','psn');?></h3>
+  <?php if($progress=='100'){ ?>
+            <div class="pyro">
+              <div class="before"></div>
+              <div class="after"></div>
+            </div>
+          <?php } ?>
   <div class="row mb-5">
           <div class="col-md-3 text-center">
-          <?php $terms = get_the_terms( $post->ID, 'trophy_groups' );
-                $term_id = $terms[0]->term_id ?? '';
-                $term_name = $terms[0]->name ?? '';
-                $attachment_id = get_term_meta($term_id)["local_iconUrl"] ?? '';
-                $term_cover = wp_get_attachment_image_src( $attachment_id[0], 'thumbnail')[0] ?? '';
-                $progress = get_term_meta( $term_id, 'progress', true);
-          ?>
+
           <img class="rounded-3" src="<?php echo $term_cover; ?>" >
           </div>
+
           <div class="col-md-9">
             <div class="row text-center">
               <h3><?php echo $term_name; ?></h3>

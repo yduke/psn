@@ -248,12 +248,19 @@ $achieved_earned = get_post_meta($post_id,'achieved_earned',true);
 if($achieved_count!='' && $achieved_earned !='' ){ 
   $progress = round($achieved_earned/$achieved_count*100,2);
   ?>
+            <?php if($progress=='100'){ ?>
+            <div class="pyro">
+              <div class="before"></div>
+              <div class="after"></div>
+            </div>
+          <?php } ?>
   <p><?php _e('Achievement Progress','psn');?></p>
   <p class="text-center"><?php echo $achieved_earned.'/'.$achieved_count;?></p>
                   <div class="progress mb-5">
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<?php echo $progress; ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress; ?>%"><?php echo $progress; ?>%</div>
                   </div>
 <?php }?>
+
                   <div class="list-group w-auto mb-5">
                   <?php
                   while ( $trophies->have_posts() ) {
