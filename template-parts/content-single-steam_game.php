@@ -26,7 +26,7 @@
         </div><!-- /.entry-meta -->
 
     </div>
-    <div class="text-center"><?php echo do_shortcode( '[yasr_visitor_votes]' );?></div>
+    <div class="text-center"><?php if(function_exists('yasr_autoload_shortcodes')){ echo do_shortcode( '[yasr_visitor_votes]' ); } ?></div>
       <?php
       $terms = get_the_terms( $post_id , 'stm_game_genres' );
       if (is_array($terms)){
