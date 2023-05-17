@@ -124,7 +124,7 @@
             </tr>
             <tr>
               <td><?php _e('Last Played On','psn');?></td>
-              <td><?php $lpt =get_the_time(get_option( 'date_format' )); echo  esc_html( human_time_diff( get_the_time('U'), current_time('timestamp',true) ) ) . __(' ago','dk-psn');echo ' (' .$lpt.')'; ?></td>
+              <td><?php $lpt =get_the_time(get_option( 'date_format' )); echo  esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . __(' ago','dk-psn');echo ' (' .$lpt.')'; ?></td>
             </tr>
             <tr>
               <td><?php _e('Obtained from','psn');?></td>

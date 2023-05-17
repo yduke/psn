@@ -42,9 +42,8 @@ header( 'Content-Type: application/json' );
         // $posts = new WP_Query( $arr );
 
    // var_dump( $posts->found_posts);
+   
+$post_id = 3405;
+$r = SaveGameDetail($post_id);
 
-$array = array("Volvo", "BMW", "Toyota");
-
-$re  = save_array_as_json($array, 'dk-psn/temp/', 'obj', $overwrite = false);
-var_dump($re);
-echo '...........extra';
+var_dump($r);
