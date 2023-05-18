@@ -5,6 +5,18 @@
             'posts_per_page'    => 10,
             'post_type'         => 'psn_game',
             'ignore_sticky_posts' => 1,
+            'meta_query'  => array(
+                'relation' => 'OR',
+                    array(
+                    'key' => 'hide-game-post',
+                    'compare' => 'NOT EXISTS' 
+                    ),
+                    array(
+                    'key' => 'hide-game-post',
+                    'value' => '1',
+                    'compare' => 'NOT IN' 
+                    ),
+                )
         );
         $posts = new WP_Query( $args );
         if ( $posts->have_posts() ) {
