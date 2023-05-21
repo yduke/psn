@@ -42,8 +42,15 @@ header( 'Content-Type: application/json' );
         // $posts = new WP_Query( $arr );
 
    // var_dump( $posts->found_posts);
-   
-$post_id = 3405;
-$r = SaveGameDetail($post_id);
+// GetSpecialSales();
+// var_dump( get_date_from_gmt( date("Y-m-d H:i:s", 1041379200), 'Y-m-d H:i:s' ));
+// $appid='258160';
+$url = 'https://psn.dukeyin.com/wp-json/psn/v1/player';
+$array = get_remote_json($url);
+// $filename = 'player';
+// $r = GetGameTrophies($appid)->availableGameStats->achievements;
+// var_dump($r);
 
-var_dump($r);
+    // $r = GetGameTrophiesStatus($appid)->achievements ?? false;
+    $r = save_array_as_json($array, $folder='dk-psn/temp/', 'players', false, $expire = 3);
+var_dump( $r);

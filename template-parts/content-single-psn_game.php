@@ -106,6 +106,23 @@
             }
             ?>
 
+            <?php $vlangs = get_the_terms( $post->ID, 'game_spo_langs' ); 
+            if($vlangs){
+              ?>
+            <tr>
+              <td><?php _e('Voice Languages','psn');?></td>
+              <td style="width: 70%;">
+              <?php 
+                  foreach ( $vlangs as $lan ) { 
+                    echo '<a href="'.get_term_link($lan->slug, 'game_spo_langs').'"><span class="badge text-bg-light">'.$lan->name.'</span></a>';
+              }
+              ?>
+              </td>
+            </tr>
+              <?php
+            }
+            ?>
+
             <tr>
               <td><?php _e('Play Count','psn');?></td>
               <td><?php echo get_post_meta($post_id,'game_playCount',true);?></td>
