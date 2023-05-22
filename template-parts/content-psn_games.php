@@ -7,16 +7,17 @@
             'ignore_sticky_posts' => 1,
             'meta_query'  => array(
                 'relation' => 'OR',
-                    array(
-                    'key' => 'hide-game-post',
-                    'compare' => 'NOT EXISTS' 
-                    ),
-                    array(
-                    'key' => 'hide-game-post',
-                    'value' => '1',
-                    'compare' => 'NOT IN' 
-                    ),
-                )
+                array(
+                    'key' 		=> 'hide_game_post',
+                    'value' 	=> '1',
+                    'compare' 	=> '!='
+                ),
+                array(
+                    'key' 		=> 'hide_game_post',
+                    'compare' => 'NOT EXISTS',
+                    'value' => ''
+                ),
+            )
         );
         $posts = new WP_Query( $args );
         if ( $posts->have_posts() ) {

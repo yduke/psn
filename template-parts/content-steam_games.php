@@ -6,17 +6,28 @@
             'post_type'         => 'steam_game',
             'ignore_sticky_posts' => 1,
             'meta_query'  => array(
-            'relation' => 'OR',
+              'relation' => 'AND',
               array(
-              'key' => 'hide-game-post',
-              'compare' => 'NOT EXISTS' 
+                array(
+                  'key' 		=> 'owned',
+                  'value' 	=> '1',
+                  'compare' 	=> '='
+                ),
               ),
               array(
-              'key' => 'hide-game-post',
-              'value' => '1',
-              'compare' => 'NOT IN' 
+                'relation' => 'OR',
+                array(
+                  'key' 		=> 'hide_game_post',
+                  'value' 	=> '1',
+                  'compare' 	=> '!='
+                ),
+                array(
+                  'key' 		=> 'hide_game_post',
+                  'compare' => 'NOT EXISTS',
+                  'value' => ''
+                ),
               ),
-            )
+          )
           );
         $posts = new WP_Query( $args );
         if ( $posts->have_posts() ) {
