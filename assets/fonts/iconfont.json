@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "35633361",
+      "name": "steamdeck",
+      "font_class": "steamdeck",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "1433769",
+      "name": "information",
+      "font_class": "info",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "4936459",
+      "name": "stop",
+      "font_class": "stop",
+      "unicode": "e842",
+      "unicode_decimal": 59458
+    },
+    {
+      "icon_id": "12991447",
+      "name": "question-线",
+      "font_class": "question",
+      "unicode": "e981",
+      "unicode_decimal": 59777
+    },
+    {
+      "icon_id": "15378548",
+      "name": "linux",
+      "font_class": "linux",
+      "unicode": "ebf7",
+      "unicode_decimal": 60407
+    },
+    {
+      "icon_id": "16577244",
+      "name": "verified",
+      "font_class": "verified",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
       "icon_id": "15275936",
       "name": "cib-playstation4",
       "font_class": "ps4",

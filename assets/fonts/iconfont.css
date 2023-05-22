@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3997831 */
-  src: url('iconfont.woff2?t=1680768858708') format('woff2'),
-       url('iconfont.woff?t=1680768858708') format('woff'),
-       url('iconfont.ttf?t=1680768858708') format('truetype');
+  src: url('iconfont.woff2?t=1684759664764') format('woff2'),
+       url('iconfont.woff?t=1684759664764') format('woff'),
+       url('iconfont.ttf?t=1684759664764') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,30 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-steamdeck:before {
+  content: "\e603";
+}
+
+.icon-info:before {
+  content: "\e647";
+}
+
+.icon-stop:before {
+  content: "\e842";
+}
+
+.icon-question:before {
+  content: "\e981";
+}
+
+.icon-linux:before {
+  content: "\ebf7";
+}
+
+.icon-verified:before {
+  content: "\e648";
 }
 
 .icon-ps4:before {

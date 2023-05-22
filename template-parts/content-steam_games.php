@@ -63,7 +63,7 @@
             echo ' <i class="iconfont icon-mac" title="MacOS"></i>';
           }
           if($lnx){
-            echo '  <i class="iconfont icon-steam" title="SteamOS"></i>';
+            echo '  <i class="iconfont icon-linux" title="Linux"></i>';
           }
           ?>
         </p>

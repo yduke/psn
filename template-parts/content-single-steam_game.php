@@ -41,6 +41,28 @@
 <div class="entry-content">
         <table class="table table-striped table-sm mb-5">
           <tbody>
+          <tr>
+              <td><?php _e('Last Played on','psn');?></td>
+              <td><?php 
+              if(get_the_time('U') == 1041408000){
+                _e('Never Played','psn');
+              }else{
+                $lpt = get_the_time(get_option( 'date_format' )); 
+                echo esc_html( human_time_diff( get_the_time('U'), current_time('U') ) ) . __(' ago','dk-psn');
+                echo ' (' .$lpt.')';
+              }
+              ?></td>
+            </tr>
+
+            <tr>
+              <td><?php _e('Play Duration','psn');?></td>
+              <td><?php 
+              $playtime = get_post_meta($post_id,'playtime',true);
+              $hours = intdiv($playtime, 60).__('h', 'psn'). ($playtime % 60).__('m', 'psn');
+              echo $hours;
+              ?></td>
+            </tr>
+
             <tr>
               <td><?php _e('Name','psn');?></td>
               <td><?php the_title();?></td>
@@ -116,7 +138,7 @@
                 echo ' <i class="iconfont icon-mac" title="MacOS"></i>';
               }
               if($lnx){
-                echo '  <i class="iconfont icon-steam" title="SteamOS"></i>';
+                echo '  <i class="iconfont icon-linux" title="Linux"></i>';
               }
               ?>
              </td>
@@ -161,7 +183,7 @@
               <td>
                 <?php _e('Score','psn');?>
             </td>
-              <td><svg class="icon" aria-hidden="true"><use xlink:href="#icon-metacritic"></use></svg>
+              <td><svg class="icon fs-4" aria-hidden="true"><use xlink:href="#icon-metacritic"></use></svg>
               <strong><a href="<?php echo $metacritic_url; ?>" target="_blank"><?php echo $metacritic; ?></a></strong>
               </td>
             </tr>
@@ -182,31 +204,66 @@
             }
             ?>
 
-            <tr>
-              <td><?php _e('Last Played on','psn');?></td>
-              <td><?php 
-              if(get_the_time('U') == 1041408000){
-                _e('Never Played','psn');
-              }else{
-                $lpt = get_the_time(get_option( 'date_format' )); 
-                echo esc_html( human_time_diff( get_the_time('U'), current_time('U') ) ) . __(' ago','dk-psn');
-                echo ' (' .$lpt.')';
-              }
-              ?></td>
-            </tr>
-
-            <tr>
-              <td><?php _e('Play Duration','psn');?></td>
-              <td><?php 
-              $playtime = get_post_meta($post_id,'playtime',true);
-              $hours = intdiv($playtime, 60).__('h', 'psn'). ($playtime % 60).__('m', 'psn');
-              echo $hours;
-              ?></td>
-            </tr>
 
 
           </tbody>
         </table>
+<?php
+$steamdeck_status = get_post_meta($post_id,'steamdeck_status',true);
+$steamdeck_items = get_post_meta($post_id,'steamdeck_items',true);
+if($steamdeck_status){
+  
+  echo '<h4>';
+  echo __('Steam Deck Verified Status','psn');
+  echo '</h4>';
+  echo '<ul class="list-group"><li class="list-group-item">';
+  echo ' <svg class="icon fs-4" aria-hidden="true"><use xlink:href="#icon-steamdeck"></use></svg>';
+    if($steamdeck_status == 3){
+      echo '<svg class="icon fs-4" aria-hidden="true"><use xlink:href="#icon-verified"></use></svg>';
+      echo ' '.__('Verified','psn');
+    }elseif($steamdeck_status == 2){
+      echo '<svg class="icon fs-4" aria-hidden="true"><use xlink:href="#icon-info"></use></svg>';
+      echo ' '.__('Playable','psn');
+    }elseif($steamdeck_status == 1){
+      echo '<i class="iconfont icon-stop fs-4"></i>';
+      echo ' '.__('Unsupported','psn');
+    }elseif($steamdeck_status == 0){
+      echo '<i class="iconfont icon-question fs-4"></i>';
+      echo ' '.__('Unknown','psn');
+    }
+    echo "</li>";
+    if($steamdeck_items){
+      foreach($steamdeck_items as $item){
+        $display_type = $item->display_type;
+        $loc_token = str_replace('#SteamDeckVerified_TestResult_', '', $item->loc_token);
+        $message = get_steamdeck_verified_message($loc_token);
+        switch($display_type){
+          case '4':
+            $icon = 'verified';
+            break;
+          case '3':
+              $icon = 'info';
+            break;
+          case '2':
+              $icon = 'stop';
+            break;
+          case '1':
+              $icon = 'question';
+            break;
+          
+          default:
+            $icon = 'info';
+        }
+        ?><li class="list-group-item"><i class="iconfont icon-<?php echo $icon; ?>"></i> <?php echo $message; ?></li><?php
+      }
+    }
+
+  echo '</ul>';
+
+}
+
+?>
+
         <div class="my-5">
           <?php
           $terms = get_the_terms( $post_id , 'stm_game_cat' );
