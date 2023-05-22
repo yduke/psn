@@ -389,7 +389,7 @@ if ( ! function_exists( 'psn_comment' ) ) {
 
 					<?php if ( '0' === $comment->comment_approved ) { ?>
 						<em class="comment-awaiting-moderation">
-							<?php esc_html_e( 'Your comment is awaiting moderation.', 'psn' ); ?>
+							<?php esc_html_e( 'Your tip is awaiting moderation.', 'psn' ); ?>
 						</em>
 						<br />
 					<?php } ?>
@@ -455,18 +455,18 @@ if ( ! function_exists( 'psn_comment' ) ) {
 			'url'     => '',
 			'cookies' => '<p class="form-check mb-3 comment-form-cookies-consent">
 							<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" class="form-check-input" type="checkbox" value="yes"' . $consent . ' />
-							<label class="form-check-label" for="wp-comment-cookies-consent">' . esc_html__( 'Save my name, email, and website in this browser for the next time I comment.', 'psn' ) . '</label>
+							<label class="form-check-label" for="wp-comment-cookies-consent">' . esc_html__( 'Save my name, email, and website in this browser for the next time I post.', 'psn' ) . '</label>
 						</p>',
 		);
 
 		$defaults = array(
 			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'        => '<div class="form-floating mb-3">
-											<textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . esc_attr__( 'Comment', 'psn' ) . ( $req ? '*' : '' ) . '"></textarea>
-											<label for="comment">' . esc_html__( 'Comment', 'psn' ) . '</label>
+											<textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . esc_attr__( 'Tip', 'psn' ) . ( $req ? '*' : '' ) . '"></textarea>
+											<label for="comment">' . esc_html__( 'Tip', 'psn' ) . '</label>
 										</div>',
 			/** This filter is documented in wp-includes/link-template.php */
-			'must_log_in'          => '<p class="must-log-in">' . sprintf( wp_kses_post( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'psn' ) ), wp_login_url( esc_url( get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
+			'must_log_in'          => '<p class="must-log-in">' . sprintf( wp_kses_post( __( 'You must be <a href="%s">logged in</a> to post a tip.', 'psn' ) ), wp_login_url( esc_url( get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
 			/** This filter is documented in wp-includes/link-template.php */
 			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( wp_kses_post( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'psn' ) ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', esc_url( get_the_permalink( get_the_ID() ) ) ) ) ) . '</p>',
 			'comment_notes_before' => '<p class="small comment-notes">' . esc_html__( 'Your Email address will not be published.', 'psn' ) . '</p>',
@@ -478,7 +478,7 @@ if ( ! function_exists( 'psn_comment' ) ) {
 			'title_reply'          => '',
 			'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'psn' ),
 			'cancel_reply_link'    => esc_html__( 'Cancel reply', 'psn' ),
-			'label_submit'         => esc_html__( 'Post Comment', 'psn' ),
+			'label_submit'         => esc_html__( 'Post a Tip', 'psn' ),
 			'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
 			'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
 			'format'               => 'html5',
@@ -559,6 +559,9 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 
 //Custom query for archive
 function dk_archive_query( $query ) {
+	if($query->get('post_type') == 'nav_menu_item'){
+		return $query;
+	}
 
     if ( $query->is_archive() && is_post_type_archive( 'psn_trophy' ) && !is_admin()) {
         $query->set( 'meta_query', array(

@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 	?>
 		<h4 id="comments-title">
 			<?php
-				esc_html_e( 'No Comments yet!', 'psn' );
+				esc_html_e( 'No tips yet!', 'psn' );
 			?>
 		</h4>
 	<?php
@@ -51,9 +51,9 @@ if ( post_password_required() ) {
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
 		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'psn' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'psn' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'psn' ) ); ?></div>
+			<h1 class="assistive-text"><?php esc_html_e( 'Tips navigation', 'psn' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Tips', 'psn' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Tips &rarr;', 'psn' ) ); ?></div>
 		</nav>
 		<?php
 			endif;
@@ -74,9 +74,9 @@ if ( post_password_required() ) {
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'psn' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'psn' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'psn' ) ); ?></div>
+			<h1 class="assistive-text"><?php esc_html_e( 'Tips navigation', 'psn' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Tips', 'psn' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Tips &rarr;', 'psn' ) ); ?></div>
 		</nav>
 		<?php
 			endif;
@@ -87,7 +87,7 @@ if ( post_password_required() ) {
 		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<h4 id="comments-title" class="nocomments"><?php esc_html_e( 'Comments are closed.', 'psn' ); ?></h4>
+		<h4 id="comments-title" class="nocomments"><?php esc_html_e( 'Tips are closed.', 'psn' ); ?></h4>
 	<?php
 		endif;
 

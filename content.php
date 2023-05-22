@@ -99,7 +99,7 @@
 			<span class="comments-link">
 				<?php
 					printf(
-						esc_html__( 'Leave a comment', 'psn' ),
+						esc_html__( 'Leave a tip', 'psn' ),
 						get_the_title()
 					);
 				?>

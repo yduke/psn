@@ -56,6 +56,14 @@ if ( have_posts() ) :
 						$taxonomy = get_queried_object();
 						_e('Game category','psn');
 						echo  ': '.$taxonomy->name;
+					}elseif(is_tax('game_spo_langs')){
+						$taxonomy = get_queried_object();
+						_e('Voice Language','psn');
+						echo  ': '.$taxonomy->name;
+					}elseif(is_tax('game_langs')){
+						$taxonomy = get_queried_object();
+						_e('Language','psn');
+						echo  ': '.$taxonomy->name;
 					}
 		?>
 	</h1>
