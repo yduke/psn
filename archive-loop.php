@@ -5,7 +5,7 @@
 
 psn_content_nav( 'nav-above' );
 $post_type= get_post_type();
-if ( $post_type=='psn_trophy' && get_post_meta( get_the_id(), 'earned', true )=='1'){
+if ( $post_type=='psn_trophy' ){
 	?>
 		<div class="row">
 		<div class="col-md-12"><div class="list-group w-auto mb-5">
@@ -20,7 +20,7 @@ if ( $post_type=='psn_trophy' && get_post_meta( get_the_id(), 'earned', true )==
 		</div>
 		</div>
 	<?php
-}elseif ( $post_type=='stm_trophy' && get_post_meta( get_the_id(), 'achieved', true )=='1'){
+}elseif ( $post_type=='stm_trophy'){
 	?>
 		<div class="row">
 		<div class="col-md-12"><div class="list-group w-auto mb-5">
@@ -35,7 +35,7 @@ if ( $post_type=='psn_trophy' && get_post_meta( get_the_id(), 'earned', true )==
 		</div>
 		</div>
 	<?php
-}elseif( $post_type!='psn_trophy' && $post_type!='stm_trophy' ){
+}else{
 	?>
 		<div class="row row-cols-2 row-cols-sm-2 row-cols-md-5 g-4">
 		<?php

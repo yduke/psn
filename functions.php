@@ -555,3 +555,63 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 	__FILE__, //Full path to the main plugin file or functions.php.
 	'psn'
 );
+
+
+//Custom query for archive
+function dk_archive_query( $query ) {
+
+    if ( $query->is_archive() && is_post_type_archive( 'psn_trophy' ) && !is_admin()) {
+        $query->set( 'meta_query', array(
+			array(
+				'key' 		=> 'earned',
+				'value' 	=> '1',
+				'compare' 	=> '='
+			),
+        ));
+    }
+
+    if ( $query->is_archive() && is_post_type_archive( 'psn_game' ) && !is_admin()) {
+        $query->set( 'meta_query', array(
+			'relation' => 'OR',
+			array(
+				'key' 		=> 'hide_game_post',
+				'value' 	=> '1',
+				'compare' 	=> '!='
+			),
+			array(
+				'key' 		=> 'hide_game_post',
+				'compare' => 'NOT EXISTS',
+				'value' => ''
+			),
+        ));
+    }
+
+    if ( $query->is_archive() && is_post_type_archive( 'stm_trophy' ) && !is_admin()) {
+        $query->set( 'meta_query', array(
+			array(
+				'key' 		=> 'achieved',
+				'value' 	=> '1',
+				'compare' 	=> '='
+			),
+        ));
+    }
+
+    if ( $query->is_archive() && is_post_type_archive( 'steam_game' ) && !is_admin()) {
+        $query->set( 'meta_query', array(
+			'relation' => 'OR',
+			array(
+				'key' 		=> 'hide_game_post',
+				'value' 	=> '1',
+				'compare' 	=> '!='
+			),
+			array(
+				'key' 		=> 'hide_game_post',
+				'compare' => 'NOT EXISTS',
+				'value' => ''
+			),
+        ));
+    }
+
+	return $query;
+}
+add_action( 'pre_get_posts', 'dk_archive_query' );
