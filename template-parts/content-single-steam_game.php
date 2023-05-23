@@ -168,7 +168,7 @@
             <tr>
               <td><?php _e('Price','psn');?></td>
               <td>
-              <?php echo number_format((float)$cny, 2, '.', '');; ?>
+              <?php echo number_format((float)$cny, 2, '.', ''); ?>
               </td>
             </tr>
               <?php
@@ -211,7 +211,7 @@
 <?php
 $steamdeck_status = get_post_meta($post_id,'steamdeck_status',true);
 $steamdeck_items = get_post_meta($post_id,'steamdeck_items',true);
-if($steamdeck_status){
+if($steamdeck_status !=''){
   
   echo '<h4>';
   echo __('Steam Deck Verified Status','psn');
@@ -268,7 +268,6 @@ if($steamdeck_status){
           <?php
           $terms = get_the_terms( $post_id , 'stm_game_cat' );
           if (is_array($terms)){
-            
             foreach ( $terms as $term ) { 
                   echo '<a href="'.get_term_link($term->slug, 'stm_game_cat').'"><span class="badge text-bg-dark">'.$term->name.'</span></a> ';
 

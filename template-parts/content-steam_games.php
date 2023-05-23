@@ -65,6 +65,19 @@
           if($lnx){
             echo '  <i class="iconfont icon-linux" title="Linux"></i>';
           }
+          $steamdeck_status = get_post_meta($post->ID,'steamdeck_status',true);
+          if($steamdeck_status !=''){
+            echo ' <svg class="icon" aria-hidden="true"><use xlink:href="#icon-steamdeck"></use></svg>';
+            if($steamdeck_status == 3){
+              echo '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-verified"></use></svg>';
+            }elseif($steamdeck_status == 2){
+              echo '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-info"></use></svg>';
+            }elseif($steamdeck_status == 1){
+              echo '<i class="iconfont icon-stop"></i>';
+            }elseif($steamdeck_status == 0){
+              echo '<i class="iconfont icon-question"></i>';
+            }
+          }
           ?>
         </p>
       </div>

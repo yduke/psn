@@ -9,6 +9,20 @@
 		<div class="bg-secondary bg-opacity-25 bg-gradient">
 				<?php
 				if( $post_type=='steam_game'){
+					$steamdeck_status = get_post_meta($post->ID,'steamdeck_status',true);
+					if($steamdeck_status !=''){
+						echo '<span class="badge rounded-pill text-bg-dark position-absolute top-0 end-0">';
+					  if($steamdeck_status == 3){
+						echo '<svg class="icon fs-2 " aria-hidden="true"><use xlink:href="#icon-verified"></use></svg>';
+					  }elseif($steamdeck_status == 2){
+						echo '<svg class="icon fs-2" aria-hidden="true"><use xlink:href="#icon-info"></use></svg>';
+					  }elseif($steamdeck_status == 1){
+						echo '<i class="iconfont icon-stop text-white fs-2"></i>';
+					  }elseif($steamdeck_status == 0){
+						echo '<i class="iconfont icon-question fs-2"></i>';
+					  }
+					  echo "</span>";
+					}
 					$img_lib = get_post_meta( $post->ID, 'img_library', true );
 					if($img_lib){
 					?>
