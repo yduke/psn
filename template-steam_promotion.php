@@ -45,7 +45,7 @@ get_header();
              ?>
             </div>
             <div class="d-flex justify-content-between align-items-center">
-            <small class="text-muted"><?php if($game->discounted){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $game->discount_expiration , current_time('timestamp',true) ) );}else{ echo __('No discount','');}?></small>
+            <small class="text-muted"><?php if($game->discounted){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $game->discount_expiration , current_time('timestamp',true) ) );}else{ echo __('No discount','psn');}?></small>
             </div>
         </div>
 	</div>
@@ -79,7 +79,7 @@ get_header();
              ?>
             </div>
             <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted"><?php if($sales->discounted){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $sales->discount_expiration , current_time('timestamp',true) ) );}else{ echo __('No discount','');}?></small>
+                <small class="text-muted"><?php if($sales->discounted){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $sales->discount_expiration , current_time('timestamp',true) ) );}else{ echo __('No discount','psn');}?></small>
             </div>
         </div>
 	</div>
