@@ -284,7 +284,9 @@ if($steamdeck_status !=''){
             wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'psn' ) . '</span>', 'after' => '</div>' ) );
             ?></div>
             <?php } ?>
-
+<?php
+    edit_post_link( __( 'Edit', 'psn' ), '<span class="edit-link">', '</span>' );
+?>
           <?php
                 $appid = get_post_meta($post_id,'appid',true);
                 $query_meta = array(
@@ -334,7 +336,7 @@ if($achieved_count!='' && $achieved_earned !='' ){
                     }
 
                     ?>
-  <a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3 <?php if($achieved == '0'){echo 'grayscale';};?>" aria-current="true">
+  <a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3 <?php if($achieved == '0'){echo 'grayscale';}if($hidden=='1' && $achieved != '1'){echo ' blurry';} ?>" aria-current="true">
     <img src="<?php echo $image; ?>" alt="<?php the_title(); ?>" width="75" height="75" class="flex-shrink-0 rounded-3 bg-secondary bg-opacity-25 bg-gradient">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
@@ -353,9 +355,7 @@ if($achieved_count!='' && $achieved_earned !='' ){
           ?>
 </div><!-- /.entry-content -->
 
-<?php
-    edit_post_link( __( 'Edit', 'psn' ), '<span class="edit-link">', '</span>' );
-?>
+
 
 
 </article><!-- /#post-<?php the_ID(); ?> -->

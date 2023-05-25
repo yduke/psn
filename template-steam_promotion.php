@@ -5,6 +5,7 @@ Template Name: Steam Promotions
 __( 'Steam Promotions', 'dukeyin' );
 $wp_upload_dir = wp_upload_dir();
 $local_path = $wp_upload_dir['basedir'].'/dk-steam/api_cache/featuredcategories.json';
+$filetime = filemtime($local_path );
 $json       = file_get_contents($local_path);
 $obj        = json_decode($json);
 $special    = $obj->specials->items;
@@ -12,12 +13,13 @@ $top_sellers    = $obj->top_sellers->items;
 get_header();
 
 ?>
-<div class="row">
+<div class="row mb-4">
 <div class="col-sm-12">
     <header class="page-header">
         <h1 class="page-title"><?php _e('Steam Promotions','psn');?></h1>
     </header>
-    <h2 class="mt-5"><?php _e('Special sales','psn');?></h2>
+
+    <h2 class="mt-5 mb-4"><?php _e('Special sales','psn');?></h2>
     <?php
     if ($obj ) {
     ?>
@@ -54,7 +56,7 @@ get_header();
         }
     ?>
     </div>
-    <h2 class="mt-5"><?php _e('Top sales','psn');?></h2>
+    <h2 class="mt-5 mb-4"><?php _e('Top sales','psn');?></h2>
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-5 g-1">
         <?php
         foreach($top_sellers as $sales){
@@ -97,5 +99,7 @@ get_header();
     ?>
     </div>
 </div>
+
+<p><?php if($filetime){echo __('Cached on','psn').' '.date_i18n( get_option('date_format').' '.get_option('time_format'), $filetime );} ?></p>
 <?php
 get_footer();

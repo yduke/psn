@@ -162,6 +162,9 @@
             the_content();
             wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'psn' ) . '</span>', 'after' => '</div>' ) );
             ?></div>
+            <?php
+                edit_post_link( __( 'Edit', 'psn' ), '<span class="edit-link">', '</span>' );
+            ?>
             <?php } ?>
 <?php if(has_term( '', 'trophy_groups' )){  
         $terms = get_the_terms( $post->ID, 'trophy_groups' );
@@ -249,9 +252,7 @@
 
 </div><!-- /.entry-content -->
 
-<?php
-    edit_post_link( __( 'Edit', 'psn' ), '<span class="edit-link">', '</span>' );
-?>
+
 
 
 </article><!-- /#post-<?php the_ID(); ?> -->

@@ -35,6 +35,21 @@ if ( $post_type=='psn_trophy' ){
 			</div>
 		</div>
 	<?php
+}elseif ( $post_type=='dk_log'){
+	?>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="list-group  w-auto mb-5">
+				<?php
+					while ( have_posts() ) :
+						the_post();
+							get_template_part( 'template-parts/content', 'dk_log' );
+					endwhile;
+				?>
+				</div>
+			</div>
+		</div>
+	<?php
 }else{
 	?>
 		<div class="row row-cols-2 row-cols-sm-2 row-cols-md-5 g-4">

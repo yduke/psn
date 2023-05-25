@@ -5,3 +5,9 @@
 .post-thumbnail img{
     border-radius:10px
 }
+.grayscale.blurry * {
+    filter: blur(5px);
+}
+.grayscale.blurry img {
+    filter: blur(3px) grayscale(.8)!important;
+}

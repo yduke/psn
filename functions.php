@@ -629,3 +629,14 @@ function dk_archive_query( $query ) {
 	return $query;
 }
 add_action( 'pre_get_posts', 'dk_archive_query' );
+
+
+//disable single for dk_log
+add_action( 'template_redirect', 'dk_log_disable_single' );
+
+function dk_log_disable_single() {
+  if ( is_singular( 'dk_log' ) ) :
+    wp_redirect( home_url(), 301 );
+    exit;
+  endif;
+}

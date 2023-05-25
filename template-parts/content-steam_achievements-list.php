@@ -1,4 +1,4 @@
-<a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+<a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3 <?php $hidden= get_post_meta($post->ID, 'hidden',true); if($hidden=='1'){echo 'blurry';} ?>" aria-current="true">
       <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); ?>" alt="<?php the_title(); ?>" width="75" height="75" class="flex-shrink-0 rounded-3 bg-secondary bg-opacity-25 bg-gradient">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>

@@ -2,7 +2,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-<header class="entry-header">
+<header class="entry-header <?php if($hidden=='1' && $achieved != '1'){echo 'grayscale blurry';} ?>">
 <div class="my-5 text-center">
             <?php if ( has_post_thumbnail() ){
               if($achieved == '1' || $achieved == ''){
@@ -60,6 +60,12 @@
               echo '<a href='.$link.'>'.$game.'</a>';
               ?></td>
             </tr>
+            <?php if($hidden){?>
+              <td><?php _e('Hidden achievement','psn');?></td>
+              <td><?php _e('Yes','psn');?></td>
+
+              <?php } ?>
+
           </tbody>
         </table>
 
