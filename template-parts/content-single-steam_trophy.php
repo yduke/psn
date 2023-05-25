@@ -8,7 +8,7 @@
               if($achieved == '1' || $achieved == ''){
                     echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'full' ) . '</div>';
                   }else{
-                    echo '<div class="post-thumbnail"><img src="' . get_post_meta($post_id,'icongray',true) . '"></div>';;
+                    echo '<div class="post-thumbnail"><img loading="lazy" src="' . get_post_meta($post_id,'icongray',true) . '"></div>';;
                   }
               }
              ?>

@@ -41,7 +41,7 @@
                 $term_cover = wp_get_attachment_image_src( $attachment_id[0], 'thumbnail')[0] ?? '';
                 $progress = get_term_meta( $term_id, 'progress', true);
           ?>
-          <img class="rounded-3" src="<?php echo $term_cover; ?>" >
+          <img loading="lazy" class="rounded-3" src="<?php echo $term_cover; ?>" >
           </div>
           <div class="col-md-9">
             <div class="row text-center">

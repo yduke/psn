@@ -337,7 +337,7 @@ if($achieved_count!='' && $achieved_earned !='' ){
 
                     ?>
   <a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3 <?php if($achieved == '0'){echo 'grayscale';}if($hidden=='1' && $achieved != '1'){echo ' blurry';} ?>" aria-current="true">
-    <img src="<?php echo $image; ?>" alt="<?php the_title(); ?>" width="75" height="75" class="flex-shrink-0 rounded-3 bg-secondary bg-opacity-25 bg-gradient">
+    <img loading="lazy" src="<?php echo $image; ?>" alt="<?php the_title(); ?>" width="75" height="75" class="flex-shrink-0 rounded-3 bg-secondary bg-opacity-25 bg-gradient">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
         <h5 class="mb-0"><?php the_title(); ?></h5>

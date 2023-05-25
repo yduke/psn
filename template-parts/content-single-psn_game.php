@@ -150,7 +150,7 @@
               if($plus == 'none(purchased)'){
                 echo __('Purchased','psn');
               }elseif($plus == 'ps_plus'){
-                echo '<img src="'.get_template_directory_uri().'/assets/img/plus.svg" width="20" height="20">';
+                echo '<img loading="lazy" src="'.get_template_directory_uri().'/assets/img/plus.svg" width="20" height="20">';
               }
               ?></td>
             </tr>
@@ -185,7 +185,7 @@
   <div class="row mb-5">
           <div class="col-md-3 text-center">
 
-          <img class="rounded-3" src="<?php echo $term_cover; ?>" >
+          <img loading="lazy" class="rounded-3" src="<?php echo $term_cover; ?>" >
           </div>
 
           <div class="col-md-9">
@@ -232,7 +232,7 @@
           $t_color = get_post_meta(get_the_ID(),'type',true);
           ?>
           <a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3 <?php if($earned == '0'){echo 'grayscale';}?>" aria-current="true">
-            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="<?php the_title(); ?>" width="75" height="75" class="flex-shrink-0 rounded-3 bg-secondary bg-opacity-25 bg-gradient">
+            <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="<?php the_title(); ?>" width="75" height="75" class="flex-shrink-0 rounded-3 bg-secondary bg-opacity-25 bg-gradient">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
                 <h5 class="mb-0"><i class="iconfont icon-trophy <?php echo $t_color; ?>"></i><?php the_title(); ?></h5>

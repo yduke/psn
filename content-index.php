@@ -26,7 +26,7 @@
 					$img_lib = get_post_meta( $post->ID, 'img_library', true );
 					if($img_lib){
 					?>
-					<img src="<?php echo $img_lib; ?>" class="card-img-top">
+					<img loading="lazy" src="<?php echo $img_lib; ?>" class="card-img-top">
 					<?php
 					}else{
 						if ( has_post_thumbnail() ) { the_post_thumbnail('medium', array('class' => 'card-img-top'));  };

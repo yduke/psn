@@ -39,7 +39,7 @@
             $posts->the_post()
     ?>
   <a href="<?php the_permalink(); ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); ?>" alt="<?php the_title(); ?>" width="75" height="75" class="rounded-3 flex-shrink-0">
+    <img loading="lazy" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); ?>" alt="<?php the_title(); ?>" width="75" height="75" class="rounded-3 flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
         <h6 class="mb-0"><?php the_title(); ?></h6>

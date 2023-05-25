@@ -9,8 +9,8 @@ $appid  = 250320;
 // echo '<pre>';
 
 // $json= download_as_json($url, $folder='dk-psn/temp/', 'temp', false, 3);
-$r = GetGameDetail($appid);
+// $r = GetGameDetail($appid);
 
-echo '<pre>';
- var_dump($r);
-echo '</pre>';
+// echo '<pre>';
+//  var_dump($r);
+// echo '</pre>';
