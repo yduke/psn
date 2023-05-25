@@ -600,30 +600,48 @@ function dk_archive_query( $query ) {
     }
 
     if ( $query->is_archive() && is_post_type_archive( 'steam_game' ) && !is_admin()) {
-        $query->set( 'meta_query', array(
-			'relation' => 'AND',
-			array(
+		$includeShare = get_option('stm_include_shared_games');
+		if($includeShare =='1'){
+			$query->set( 'meta_query', array(
+					'relation' => 'OR',
+					array(
+						'key' 		=> 'hide_game_post',
+						'value' 	=> '1',
+						'compare' 	=> '!='
+					),
+					array(
+						'key' 		=> 'hide_game_post',
+						'compare' => 'NOT EXISTS',
+						'value' => ''
+					),
+			));
+		}else{
+			$query->set( 'meta_query', array(
+				'relation' => 'AND',
 				array(
-					'key' 		=> 'owned',
-					'value' 	=> '1',
-					'compare' 	=> '='
-				),
-			),
-			array(
-				'relation' => 'OR',
-				array(
-					'key' 		=> 'hide_game_post',
-					'value' 	=> '1',
-					'compare' 	=> '!='
+					array(
+						'key' 		=> 'owned',
+						'value' 	=> '1',
+						'compare' 	=> '='
+					),
 				),
 				array(
-					'key' 		=> 'hide_game_post',
-					'compare' => 'NOT EXISTS',
-					'value' => ''
+					'relation' => 'OR',
+					array(
+						'key' 		=> 'hide_game_post',
+						'value' 	=> '1',
+						'compare' 	=> '!='
+					),
+					array(
+						'key' 		=> 'hide_game_post',
+						'compare' => 'NOT EXISTS',
+						'value' => ''
+					),
 				),
-			),
-			
-        ));
+				
+			));
+		}
+
     }
 
 	return $query;

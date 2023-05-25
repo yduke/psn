@@ -1,33 +1,52 @@
 <?php
     // Games content
+    $includeShare = get_option('stm_include_shared_games');
+    if($includeShare =='1'){
+      $meta_query = array(
+                        'relation' => 'OR',
+                        array(
+                          'key' 		=> 'hide_game_post',
+                          'value' 	=> '1',
+                          'compare' 	=> '!='
+                        ),
+                        array(
+                          'key' 		=> 'hide_game_post',
+                          'compare' => 'NOT EXISTS',
+                          'value' => ''
+                        ),
+                    );
+    }else{
+      $meta_query = array(
+                      'relation' => 'AND',
+                      array(
+                        array(
+                          'key' 		=> 'owned',
+                          'value' 	=> '1',
+                          'compare' 	=> '='
+                        ),
+                      ),
+                      array(
+                        'relation' => 'OR',
+                        array(
+                          'key' 		=> 'hide_game_post',
+                          'value' 	=> '1',
+                          'compare' 	=> '!='
+                        ),
+                        array(
+                          'key' 		=> 'hide_game_post',
+                          'compare' => 'NOT EXISTS',
+                          'value' => ''
+                        ),
+                      ),
+                    );
+    }
+
         $args = array(
             'orderby'           => 'date',
             'posts_per_page'    => 10,
             'post_type'         => 'steam_game',
             'ignore_sticky_posts' => 1,
-            'meta_query'  => array(
-              'relation' => 'AND',
-              array(
-                array(
-                  'key' 		=> 'owned',
-                  'value' 	=> '1',
-                  'compare' 	=> '='
-                ),
-              ),
-              array(
-                'relation' => 'OR',
-                array(
-                  'key' 		=> 'hide_game_post',
-                  'value' 	=> '1',
-                  'compare' 	=> '!='
-                ),
-                array(
-                  'key' 		=> 'hide_game_post',
-                  'compare' => 'NOT EXISTS',
-                  'value' => ''
-                ),
-              ),
-          )
+            'meta_query'  => $meta_query,
           );
         $posts = new WP_Query( $args );
         if ( $posts->have_posts() ) {
