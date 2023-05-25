@@ -31,7 +31,7 @@ get_header();
 <article>
     <div class="card shadow-sm">
         <div class="bg-secondary bg-opacity-25 bg-gradient">
-            <img width="616" height="353" src="<?php echo $game->large_capsule_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+            <img loading="lazy" width="616" height="353" src="<?php echo $game->large_capsule_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
         </div>
         <div class="card-body">
             <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $game->id; ?>/" title="<?php echo $game->name; ?>" rel="bookmark" target="_blank"><?php echo $game->name; ?></a></h2>
@@ -64,7 +64,7 @@ get_header();
 <article>
     <div class="card shadow-sm">
         <div class="bg-secondary bg-opacity-25 bg-gradient">
-            <img width="616" height="353" src="<?php echo $sales->large_capsule_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+            <img loading="lazy" width="616" height="353" src="<?php echo $sales->large_capsule_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
         </div>
         <div class="card-body">
             <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $sales->id; ?>/" title="<?php echo $sales->name; ?>" rel="bookmark" target="_blank"><?php echo $sales->name; ?></a></h2>
