@@ -5,6 +5,9 @@ Template Name: Steam Promotions
 __( 'Steam Promotions', 'dukeyin' );
 $wp_upload_dir = wp_upload_dir();
 $local_path = $wp_upload_dir['basedir'].'/dk-steam/api_cache/featuredcategories.json';
+if(!file_exists($local_path)){
+    GetSpecialSales();
+}
 $filetime = filemtime($local_path );
 $json       = file_get_contents($local_path);
 $obj        = json_decode($json);
@@ -23,21 +26,21 @@ get_header();
     <?php
     if ($obj ) {
     ?>
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-5 g-2">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-2">
         <?php
         usort($special, fn($b, $a) => $b->final_price - $a->final_price);
         foreach($special as $game){
 ?>
 <article>
-    <div class="card shadow-sm">
+    <div class="card text-bg-dark">
         <div class="bg-secondary bg-opacity-25 bg-gradient">
-            <img loading="lazy" width="616" height="353" src="<?php echo $game->large_capsule_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+            <img loading="lazy" width="616" height="353" src="<?php echo $game->header_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
         </div>
         <div class="card-body">
-            <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $game->id; ?>/" title="<?php echo $game->name; ?>" rel="bookmark" target="_blank"><?php echo $game->name; ?></a></h2>
+            <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $game->id; ?>/" title="<?php echo $game->name; ?>" rel="bookmark" target="_blank" class="link-light"><?php echo $game->name; ?></a></h2>
             <div class="card-text small text-truncate">
             <?php 
-            echo '￥'.'<span class="badge text-bg-light fs-4 p-1">'. $game->final_price/100 .'</span>';
+            echo '￥'.'<span class="badge fs-4 p-1">'. $game->final_price/100 .'</span>';
             if($game->discounted){
                 echo ' ( <del>';
                 echo '￥'.$game->original_price/100;
@@ -57,14 +60,14 @@ get_header();
     ?>
     </div>
     <h2 class="mt-5 mb-4"><?php _e('Top sales','psn');?></h2>
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-5 g-1">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-1">
         <?php
         foreach($top_sellers as $sales){
 ?>
 <article>
     <div class="card shadow-sm">
         <div class="bg-secondary bg-opacity-25 bg-gradient">
-            <img loading="lazy" width="616" height="353" src="<?php echo $sales->large_capsule_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+            <img loading="lazy" width="616" height="353" src="<?php echo $sales->header_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
         </div>
         <div class="card-body">
             <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $sales->id; ?>/" title="<?php echo $sales->name; ?>" rel="bookmark" target="_blank"><?php echo $sales->name; ?></a></h2>
@@ -100,6 +103,8 @@ get_header();
     </div>
 </div>
 
-<p><?php if($filetime){echo __('Cached on','psn').' '.date_i18n( get_option('date_format').' '.get_option('time_format'), $filetime );} ?></p>
+<p><?php if($filetime){
+    echo __('Cached on','psn').' '. get_date_from_gmt( date( 'Y-m-d H:i:s', $filetime ), get_option('date_format').' '.get_option('time_format') );;
+    } ?></p>
 <?php
 get_footer();
