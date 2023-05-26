@@ -1,4 +1,4 @@
-<?php $post_id=get_the_ID(); $achieved = get_post_meta($post_id,'achieved',true); $hidden = get_post_meta($post_id,'hidden',true); ?>
+<?php $post_id=get_the_ID(); $achieved = get_post_meta($post_id,'achieved',true); $hidden = get_post_meta($post_id,'hidden',true);$global_percentage = get_post_meta($post_id,'global_percentage',true); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
@@ -17,11 +17,20 @@
             <?php the_excerpt();?>
         </p>
         <div class="entry-meta">
+          <p>
                 <?php
                 if($achieved=='0'){echo __('Unearned','psn');}else{
                   echo __('Earned on','psn').' '.esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ). __(' ago','psn');
                 }
                 ?>
+          </p>
+          <?php
+          if($global_percentage){
+            echo '<p>';
+            printf( esc_html__( '%d&#37; of all players has this achievement globally.', 'psn' ), $global_percentage );
+            echo '</p>';
+          }
+          ?>
         </div><!-- /.entry-meta -->
 
     </div>

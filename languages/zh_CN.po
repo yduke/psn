@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-05-25 14:33+0800\n"
-"PO-Revision-Date: 2023-05-25 14:34+0800\n"
+"POT-Creation-Date: 2023-05-26 23:06+0800\n"
+"PO-Revision-Date: 2023-05-26 23:08+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -38,7 +38,7 @@ msgstr "最近PlayStation游戏"
 msgid "Recent PlayStation Trophies"
 msgstr "最近PlayStation奖杯"
 
-#: archive.php:18 template-parts/content-steam_games.php:35
+#: archive.php:18 template-parts/content-steam_games.php:54
 msgid "Recent Steam Games"
 msgstr "最近Steam游戏"
 
@@ -170,7 +170,7 @@ msgstr "%s的固定链接"
 
 #: content-index.php:58 template-parts/content-single-steam_game.php:21
 #: template-parts/content-single-steam_game.php:48
-#: template-parts/content-steam_games.php:86
+#: template-parts/content-steam_games.php:105
 msgid "Never Played"
 msgstr "从未游玩"
 
@@ -189,10 +189,10 @@ msgstr "从未游玩"
 #: template-parts/content-single-steam_game.php:23
 #: template-parts/content-single-steam_game.php:51
 #: template-parts/content-single-steam_game.php:332
-#: template-parts/content-single-steam_trophy.php:22
+#: template-parts/content-single-steam_trophy.php:23
 #: template-parts/content-steam_achievements-list.php:9
 #: template-parts/content-steam_achievements.php:27
-#: template-parts/content-steam_games.php:88
+#: template-parts/content-steam_games.php:107
 msgid " ago"
 msgstr "前"
 
@@ -215,7 +215,7 @@ msgstr "页："
 #: page.php:27 sidebar.php:18 template-parts/content-single-psn_game.php:166
 #: template-parts/content-single-psn_trophy.php:66
 #: template-parts/content-single-steam_game.php:288
-#: template-parts/content-single-steam_trophy.php:75
+#: template-parts/content-single-steam_trophy.php:84
 msgid "Edit"
 msgstr "编辑"
 
@@ -568,7 +568,7 @@ msgstr "账号国家："
 #: template-parts/content-psn_games.php:56
 #: template-parts/content-psn_trophies.php:42
 #: template-parts/content-steam_achievements.php:34
-#: template-parts/content-steam_games.php:98
+#: template-parts/content-steam_games.php:117
 msgid "More"
 msgstr "更多"
 
@@ -660,19 +660,19 @@ msgstr "奖杯进程"
 #: template-parts/content-single-psn_game.php:241
 #: template-parts/content-single-psn_trophy.php:26
 #: template-parts/content-single-steam_game.php:335
-#: template-parts/content-single-steam_trophy.php:21
-#: template-parts/content-single-steam_trophy.php:35
+#: template-parts/content-single-steam_trophy.php:22
+#: template-parts/content-single-steam_trophy.php:44
 msgid "Unearned"
 msgstr "未获得"
 
 #: template-parts/content-single-psn_trophy.php:23
-#: template-parts/content-single-steam_trophy.php:22
-#: template-parts/content-single-steam_trophy.php:34
+#: template-parts/content-single-steam_trophy.php:23
+#: template-parts/content-single-steam_trophy.php:43
 msgid "Earned on"
 msgstr "获得于"
 
 #: template-parts/content-single-psn_trophy.php:33
-#: template-parts/content-single-steam_trophy.php:38
+#: template-parts/content-single-steam_trophy.php:47
 msgid "From Game"
 msgstr "来自游戏"
 
@@ -728,36 +728,41 @@ msgstr "成就"
 msgid "Achievement Progress"
 msgstr "成就进度"
 
-#: template-parts/content-single-steam_trophy.php:64
+#: template-parts/content-single-steam_trophy.php:30
+#, php-format
+msgid "%d&#37; of all players has this achievement globally."
+msgstr "全球%d&#37;的玩家拥有此成就。"
+
+#: template-parts/content-single-steam_trophy.php:73
 msgid "Hidden achievement"
 msgstr "隐藏成就"
 
-#: template-parts/content-single-steam_trophy.php:65
+#: template-parts/content-single-steam_trophy.php:74
 msgid "Yes"
 msgstr ""
 
 #. Template Name of the plugin/theme
-#: template-steam_promotion.php:5 template-steam_promotion.php:19
+#: template-steam_promotion.php:5 template-steam_promotion.php:22
 msgid "Steam Promotions"
 msgstr "Steam促销"
 
-#: template-steam_promotion.php:22
+#: template-steam_promotion.php:25
 msgid "Special sales"
 msgstr "特别优惠"
 
-#: template-steam_promotion.php:50 template-steam_promotion.php:84
+#: template-steam_promotion.php:53 template-steam_promotion.php:87
 msgid "Discount time left:  "
 msgstr "折扣剩余："
 
-#: template-steam_promotion.php:50 template-steam_promotion.php:84
+#: template-steam_promotion.php:53 template-steam_promotion.php:87
 msgid "No discount"
 msgstr "无优惠"
 
-#: template-steam_promotion.php:59
+#: template-steam_promotion.php:62
 msgid "Top sales"
 msgstr "售出最多"
 
-#: template-steam_promotion.php:103
+#: template-steam_promotion.php:107
 msgid "Cached on"
 msgstr "缓存日期"
 
