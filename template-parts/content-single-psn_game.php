@@ -7,7 +7,22 @@
             <?php if ( has_post_thumbnail() ) :
                     echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'medium' ) . '</div>';
             endif; ?>
-        <h2 class="display-5 fw-bold"><i class="iconfont icon-playstation size-m"></i> <?php the_title(); ?></h2>
+        <h2 class="display-5 fw-bold">
+          <i class="iconfont icon-playstation size-m"></i>
+          <?php
+                    $game_tittle_custom = get_post_meta($post_id,'game_tittle_custom',true);
+                    $name_localized = get_post_meta($post_id,'game_localizedName',true);
+                    if($game_tittle_custom){
+                      echo $game_tittle_custom;
+                    }else{
+                      if($name_localized !='' && $name_localized != get_the_title()){
+                        echo $name_localized;
+                      }else{
+                        the_title(); 
+                      }
+                    }
+          ?>
+        </h2>
         <div class="entry-meta">
                 <?php
                     $terms = get_the_terms( $post->ID, 'game_publishers' ); 
@@ -36,10 +51,32 @@
   
         <table class="table table-striped table-sm">
           <tbody>
-            <tr>
+          <tr>
               <td><?php _e('Name','psn');?></td>
-              <td><?php echo get_post_meta($post_id,'game_localizedName',true);?></td>
+              <td><?php the_title();?></td>
             </tr>
+
+            <?php 
+            if(''!=$name_localized && $name_localized != get_the_title()){
+              ?>
+            <tr>
+              <td><?php _e('Local Name','psn');?></td>
+              <td><?php echo $name_localized; ?></td>
+            </tr>
+              <?php
+            }
+            ?>
+
+            <?php 
+            if(''!=$game_tittle_custom && $game_tittle_custom != get_the_title()){
+              ?>
+            <tr>
+              <td><?php _e('Also known as','psn');?></td>
+              <td><?php echo $game_tittle_custom; ?></td>
+            </tr>
+              <?php
+            }
+            ?>
 
             <?php $game_releaseDate = get_post_meta($post_id,'game_releaseDate',true); 
             if($game_releaseDate && !str_starts_with($game_releaseDate, '1970')){

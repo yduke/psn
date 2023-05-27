@@ -7,7 +7,22 @@
             <?php if ( has_post_thumbnail() ) :
                     echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'full' ) . '</div>';
             endif; ?>
-        <h2 class="display-5 fw-bold"><i class="iconfont icon-steam size-m"></i><?php the_title(); ?></h2>
+        <h2 class="display-5 fw-bold">
+          <i class="iconfont icon-steam size-m"></i>
+          <?php
+          $game_tittle_custom = get_post_meta($post_id,'game_tittle_custom',true);
+          $name_localized = get_post_meta($post_id,'name_localized',true);
+          if($game_tittle_custom){
+            echo $game_tittle_custom;
+          }else{
+            if($name_localized !='' && $name_localized != get_the_title()){
+              echo $name_localized;
+            }else{
+              the_title(); 
+            }
+          }
+          ?>
+        </h2>
         <div class="entry-meta">
                 <?php
                                 
@@ -68,14 +83,23 @@
               <td><?php the_title();?></td>
             </tr>
 
-            <?php $name_localized = get_post_meta($post_id,'name_localized',true);
+            <?php 
             if(''!=$name_localized && $name_localized != get_the_title()){
               ?>
             <tr>
               <td><?php _e('Local Name','psn');?></td>
-              <td>
-              <?php echo $name_localized; ?>
-              </td>
+              <td><?php echo $name_localized; ?></td>
+            </tr>
+              <?php
+            }
+            ?>
+
+            <?php 
+            if(''!=$game_tittle_custom && $game_tittle_custom != get_the_title()){
+              ?>
+            <tr>
+              <td><?php _e('Also known as','psn');?></td>
+              <td><?php echo $game_tittle_custom; ?></td>
             </tr>
               <?php
             }
@@ -279,14 +303,28 @@ if($steamdeck_status !=''){
 
         <?php if(get_the_content() !=''){ ?>
         <h3><?php _e('Description','psn')?></h3>
+          <?php
+            $content_descriptors = get_post_meta($post_id,'content_descriptors',true);
+            if($content_descriptors){
+            ?>
+              <div class="alert alert-warning" role="alert">
+              <i class="iconfont icon-info"></i> <?php echo $content_descriptors; ?>
+              </div>
+          <?php } ?>
         <div class="mb-5"><?php
             the_content();
             wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'psn' ) . '</span>', 'after' => '</div>' ) );
+            $legal_notice = get_post_meta($post_id,'legal_notice',true);
+            if($legal_notice){
+              echo $legal_notice;
+            }
+
             ?></div>
             <?php } ?>
 <?php
     edit_post_link( __( 'Edit', 'psn' ), '<span class="edit-link">', '</span>' );
 ?>
+
           <?php
                 $appid = get_post_meta($post_id,'appid',true);
                 $query_meta = array(

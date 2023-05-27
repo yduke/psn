@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-05-26 23:06+0800\n"
-"PO-Revision-Date: 2023-05-26 23:08+0800\n"
+"POT-Creation-Date: 2023-05-27 10:10+0800\n"
+"PO-Revision-Date: 2023-05-27 10:10+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -91,7 +91,7 @@ msgstr "发行商"
 msgid "Developer"
 msgstr "开发者"
 
-#: archive.php:51 template-parts/content-single-steam_game.php:128
+#: archive.php:51 template-parts/content-single-steam_game.php:152
 msgid "Platform"
 msgstr "平台"
 
@@ -116,7 +116,7 @@ msgstr "语言"
 msgid "About %s"
 msgstr "关于 %s"
 
-#: author-bio.php:23 template-parts/content-single-steam_game.php:198
+#: author-bio.php:23 template-parts/content-single-steam_game.php:222
 msgid "Website"
 msgstr "网站"
 
@@ -168,8 +168,8 @@ msgstr "心得已关闭。"
 msgid "Permalink to %s"
 msgstr "%s的固定链接"
 
-#: content-index.php:58 template-parts/content-single-steam_game.php:21
-#: template-parts/content-single-steam_game.php:48
+#: content-index.php:58 template-parts/content-single-steam_game.php:36
+#: template-parts/content-single-steam_game.php:63
 #: template-parts/content-steam_games.php:105
 msgid "Never Played"
 msgstr "从未游玩"
@@ -181,14 +181,14 @@ msgstr "从未游玩"
 #: template-parts/content-psn_games.php:48
 #: template-parts/content-psn_trophies-list.php:11
 #: template-parts/content-psn_trophies.php:34
-#: template-parts/content-single-psn_game.php:19
-#: template-parts/content-single-psn_game.php:139
-#: template-parts/content-single-psn_game.php:144
-#: template-parts/content-single-psn_game.php:241
+#: template-parts/content-single-psn_game.php:34
+#: template-parts/content-single-psn_game.php:176
+#: template-parts/content-single-psn_game.php:181
+#: template-parts/content-single-psn_game.php:278
 #: template-parts/content-single-psn_trophy.php:24
-#: template-parts/content-single-steam_game.php:23
-#: template-parts/content-single-steam_game.php:51
-#: template-parts/content-single-steam_game.php:332
+#: template-parts/content-single-steam_game.php:38
+#: template-parts/content-single-steam_game.php:66
+#: template-parts/content-single-steam_game.php:370
 #: template-parts/content-single-steam_trophy.php:23
 #: template-parts/content-steam_achievements-list.php:9
 #: template-parts/content-steam_achievements.php:27
@@ -205,16 +205,16 @@ msgid "Apologies, but no results were found for the requested archive."
 msgstr "抱歉，未找到任何结果。"
 
 #: content-single.php:29 content.php:49 image.php:46
-#: template-parts/content-single-psn_game.php:163
-#: template-parts/content-single-steam_game.php:284
+#: template-parts/content-single-psn_game.php:200
+#: template-parts/content-single-steam_game.php:316
 msgid "Pages:"
 msgstr "页："
 
 #: content-single.php:34 content.php:113 footer.php:48 functions.php:359
 #: functions.php:386 image.php:57 page-full.php:25 page-nosidebar.php:25
-#: page.php:27 sidebar.php:18 template-parts/content-single-psn_game.php:166
+#: page.php:27 sidebar.php:18 template-parts/content-single-psn_game.php:203
 #: template-parts/content-single-psn_trophy.php:66
-#: template-parts/content-single-steam_game.php:288
+#: template-parts/content-single-steam_game.php:325
 #: template-parts/content-single-steam_trophy.php:84
 msgid "Edit"
 msgstr "编辑"
@@ -337,8 +337,8 @@ msgid "Reply"
 msgstr "回复"
 
 #: functions.php:448 functions.php:449
-#: template-parts/content-single-psn_game.php:40
-#: template-parts/content-single-steam_game.php:67
+#: template-parts/content-single-psn_game.php:55
+#: template-parts/content-single-steam_game.php:82
 msgid "Name"
 msgstr "名称"
 
@@ -572,94 +572,104 @@ msgstr "账号国家："
 msgid "More"
 msgstr "更多"
 
-#: template-parts/content-single-psn_game.php:18
-#: template-parts/content-single-steam_game.php:23
-#: template-parts/content-single-steam_game.php:45
+#: template-parts/content-single-psn_game.php:33
+#: template-parts/content-single-steam_game.php:38
+#: template-parts/content-single-steam_game.php:60
 msgid "Last Played on"
 msgstr "最后游玩"
 
-#: template-parts/content-single-psn_game.php:48
+#: template-parts/content-single-psn_game.php:63
+#: template-parts/content-single-steam_game.php:90
+msgid "Local Name"
+msgstr "第二名称"
+
+#: template-parts/content-single-psn_game.php:74
+#: template-parts/content-single-steam_game.php:101
+msgid "Also known as"
+msgstr "自定义名称"
+
+#: template-parts/content-single-psn_game.php:85
 msgid "Release Date"
 msgstr "发布日期"
 
-#: template-parts/content-single-psn_game.php:63
+#: template-parts/content-single-psn_game.php:100
 msgid "Platform available"
 msgstr "可用平台"
 
-#: template-parts/content-single-psn_game.php:77
+#: template-parts/content-single-psn_game.php:114
 msgid "Platform Played"
 msgstr "游玩平台"
 
-#: template-parts/content-single-psn_game.php:87
-#: template-parts/content-single-steam_game.php:232
+#: template-parts/content-single-psn_game.php:124
+#: template-parts/content-single-steam_game.php:256
 msgid "Unknown"
 msgstr "未知"
 
-#: template-parts/content-single-psn_game.php:96
-#: template-parts/content-single-steam_game.php:151
+#: template-parts/content-single-psn_game.php:133
+#: template-parts/content-single-steam_game.php:175
 msgid "Languages"
 msgstr "语言"
 
-#: template-parts/content-single-psn_game.php:113
+#: template-parts/content-single-psn_game.php:150
 msgid "Voice Languages"
 msgstr "语音"
 
-#: template-parts/content-single-psn_game.php:127
+#: template-parts/content-single-psn_game.php:164
 msgid "Play Count"
 msgstr "游玩次数"
 
-#: template-parts/content-single-psn_game.php:131
-#: template-parts/content-single-steam_game.php:58
+#: template-parts/content-single-psn_game.php:168
+#: template-parts/content-single-steam_game.php:73
 msgid "Play Duration"
 msgstr "游玩时长"
 
-#: template-parts/content-single-psn_game.php:132
-#: template-parts/content-single-steam_game.php:61
+#: template-parts/content-single-psn_game.php:169
+#: template-parts/content-single-steam_game.php:76
 msgid "h"
 msgstr "时"
 
-#: template-parts/content-single-psn_game.php:132
-#: template-parts/content-single-steam_game.php:61
+#: template-parts/content-single-psn_game.php:169
+#: template-parts/content-single-steam_game.php:76
 msgid "m"
 msgstr "分"
 
-#: template-parts/content-single-psn_game.php:132
+#: template-parts/content-single-psn_game.php:169
 msgid "s"
 msgstr "秒"
 
-#: template-parts/content-single-psn_game.php:135
+#: template-parts/content-single-psn_game.php:172
 msgid "First Played On"
 msgstr "首次游玩"
 
-#: template-parts/content-single-psn_game.php:143
+#: template-parts/content-single-psn_game.php:180
 msgid "Last Played On"
 msgstr "最后游玩"
 
-#: template-parts/content-single-psn_game.php:147
+#: template-parts/content-single-psn_game.php:184
 msgid "Obtained from"
 msgstr "获取方式"
 
-#: template-parts/content-single-psn_game.php:151
+#: template-parts/content-single-psn_game.php:188
 msgid "Purchased"
 msgstr "已购买"
 
-#: template-parts/content-single-psn_game.php:160
-#: template-parts/content-single-steam_game.php:281
+#: template-parts/content-single-psn_game.php:197
+#: template-parts/content-single-steam_game.php:305
 msgid "Description"
 msgstr "简介"
 
-#: template-parts/content-single-psn_game.php:178
+#: template-parts/content-single-psn_game.php:215
 msgid "Trophies"
 msgstr "奖杯"
 
-#: template-parts/content-single-psn_game.php:201
+#: template-parts/content-single-psn_game.php:238
 #: template-parts/content-single-psn_trophy.php:56
 msgid "Trophy Progress"
 msgstr "奖杯进程"
 
-#: template-parts/content-single-psn_game.php:241
+#: template-parts/content-single-psn_game.php:278
 #: template-parts/content-single-psn_trophy.php:26
-#: template-parts/content-single-steam_game.php:335
+#: template-parts/content-single-steam_game.php:373
 #: template-parts/content-single-steam_trophy.php:22
 #: template-parts/content-single-steam_trophy.php:44
 msgid "Unearned"
@@ -676,55 +686,51 @@ msgstr "获得于"
 msgid "From Game"
 msgstr "来自游戏"
 
-#: template-parts/content-single-steam_game.php:75
-msgid "Local Name"
-msgstr "第二名称"
-
-#: template-parts/content-single-steam_game.php:88
+#: template-parts/content-single-steam_game.php:112
 msgid "Developers"
 msgstr "开发者"
 
-#: template-parts/content-single-steam_game.php:105
+#: template-parts/content-single-steam_game.php:129
 msgid "Release date"
 msgstr "发布日期"
 
-#: template-parts/content-single-steam_game.php:118
+#: template-parts/content-single-steam_game.php:142
 msgid "Age Required"
 msgstr "年龄要求"
 
-#: template-parts/content-single-steam_game.php:169
+#: template-parts/content-single-steam_game.php:193
 msgid "Price"
 msgstr "价格"
 
-#: template-parts/content-single-steam_game.php:184
+#: template-parts/content-single-steam_game.php:208
 msgid "Score"
 msgstr "评分"
 
-#: template-parts/content-single-steam_game.php:200
+#: template-parts/content-single-steam_game.php:224
 msgid "Link"
 msgstr "链接"
 
-#: template-parts/content-single-steam_game.php:217
+#: template-parts/content-single-steam_game.php:241
 msgid "Steam Deck Verified Status"
 msgstr "Steam Deck 认证状态"
 
-#: template-parts/content-single-steam_game.php:223
+#: template-parts/content-single-steam_game.php:247
 msgid "Verified"
 msgstr "已认证"
 
-#: template-parts/content-single-steam_game.php:226
+#: template-parts/content-single-steam_game.php:250
 msgid "Playable"
 msgstr "可玩"
 
-#: template-parts/content-single-steam_game.php:229
+#: template-parts/content-single-steam_game.php:253
 msgid "Unsupported"
 msgstr "不支持"
 
-#: template-parts/content-single-steam_game.php:302
+#: template-parts/content-single-steam_game.php:340
 msgid "Achievements"
 msgstr "成就"
 
-#: template-parts/content-single-steam_game.php:315
+#: template-parts/content-single-steam_game.php:353
 msgid "Achievement Progress"
 msgstr "成就进度"
 
