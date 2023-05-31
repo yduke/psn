@@ -13,19 +13,64 @@ $json       = file_get_contents($local_path);
 $obj        = json_decode($json);
 $special    = $obj->specials->items;
 $top_sellers    = $obj->top_sellers->items;
+$new_releases   = $obj->new_releases->items;
+$coming_soon   = $obj->coming_soon->items;
 get_header();
 
 ?>
 <div class="row mb-4">
 <div class="col-sm-12">
+<?php
+    if ($obj ) {
+    ?>
+
     <header class="page-header">
         <h1 class="page-title"><?php _e('Steam Promotions','psn');?></h1>
     </header>
 
-    <h2 class="mt-5 mb-4"><?php _e('Special sales','psn');?></h2>
-    <?php
-    if ($obj ) {
+<?php
+// foreach($obj as $spot){
+//     if($spot->id == 'cat_spotlight'){
+//         foreach($spot->items as $item){
+//             echo $item->name;
+//             echo '<br>';
+//         }
+
+//     }else{
+//         break;
+//     }
+// }
+?>
+
+
+<h2 class="mt-5 mb-4"><?php _e('Spotlight','psn');?></h2>
+    <div class="row row-cols-3 row-cols-sm-3 row-cols-md-3 row-cols-lg-6 g-1">
+        <?php
+foreach($obj as $spot){
+    if($spot->id == 'cat_spotlight'){
+        foreach($spot->items as $item){
+?>
+    <a href="<?php echo $item->url; ?>" title="<?php echo $item->name; ?>" rel="bookmark" target="_blank">
+        <img loading="lazy" width="306" height="350" src="<?php echo $item->header_image; ?>" class="card-img-top wp-post-image rounded" alt="" decoding="async" >
+    </a>
+
+<?php
+        }
+     }else{
+        break;
+    }
+    }
     ?>
+</div>
+
+
+
+
+
+
+
+    <h2 class="mt-5 mb-4"><?php _e('Special sales','psn');?></h2>
+
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-2">
         <?php
         usort($special, fn($b, $a) => $b->final_price - $a->final_price);
@@ -56,9 +101,12 @@ get_header();
 	</div>
 </article>
 <?php
-        }
+        } //Special sales end
     ?>
     </div>
+
+
+
     <h2 class="mt-5 mb-4"><?php _e('Top sales','psn');?></h2>
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-1">
         <?php
@@ -84,16 +132,105 @@ get_header();
              ?>
             </div>
             <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted"><?php if($sales->discounted){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $sales->discount_expiration , current_time('timestamp',true) ) );}else{ echo __('No discount','psn');}?></small>
+                <small class="text-muted"><?php if($sales->discounted && isset($sales->discount_expiration)){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $sales->discount_expiration , current_time('timestamp',true) ) );} if($sales->discounted === false ){ echo __('No discount','psn');}?></small>
             </div>
         </div>
 	</div>
 </article>
 
 <?php
-        }
+        }  //Top sales
     ?>
 </div>
+
+
+
+
+
+    <h2 class="mt-5 mb-4"><?php _e('New release','psn');?></h2>
+ 
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-2">
+        <?php
+        foreach($new_releases as $release){
+?>
+<article>
+    <div class="card text-bg-dark">
+        <div class="bg-secondary bg-opacity-25 bg-gradient">
+            <img loading="lazy" width="616" height="353" src="<?php echo $release->header_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+        </div>
+        <div class="card-body">
+            <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $release->id; ?>/" title="<?php echo $release->name; ?>" rel="bookmark" target="_blank" class="link-light"><?php echo $release->name; ?></a></h2>
+            <div class="card-text small text-truncate">
+            <?php 
+                       if($release->final_price > 0){
+                        echo '￥'.'<span class="badge text-bg-light fs-4 p-1">'. $release->final_price/100 .'</span>';
+                    }elseif($release->final_price === 0){
+                        echo '<span class="badge text-bg-light fs-4 p-1">'.__('Free','psn').'</span>';
+                    }
+            if($release->discounted){
+                echo ' ( <del>';
+                echo '￥'.$release->original_price/100;
+                echo '</del>';
+                echo ' -'.$release->discount_percent.'% ) ';
+            }
+             ?>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <?php ?>
+            <small class="text-muted"><?php if($release->final_price != 0){ if($release->discounted){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $release->discount_expiration , current_time('timestamp',true) ) );}else{ echo __('No discount','psn');} }else{echo __('Free to play','psn');}?></small>
+            <?php ?>
+            </div>
+        </div>
+	</div>
+</article>
+<?php
+        } //New release  end
+    ?>
+    </div>
+
+
+    <h2 class="mt-5 mb-4"><?php _e('Coming soon','psn');?></h2>
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-1">
+        <?php
+        foreach($coming_soon as $soon){
+?>
+<article>
+    <div class="card shadow-sm">
+        <div class="bg-secondary bg-opacity-25 bg-gradient">
+            <img loading="lazy" width="616" height="353" src="<?php echo $soon->header_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+        </div>
+        <div class="card-body">
+            <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $soon->id; ?>/" title="<?php echo $soon->name; ?>" rel="bookmark" target="_blank"><?php echo $soon->name; ?></a></h2>
+            <div class="card-text small text-truncate">
+            <?php 
+            if($soon->final_price > 0){
+                echo '￥'.'<span class="badge text-bg-light fs-4 p-1">'. $soon->final_price/100 .'</span>';
+            }elseif($soon->final_price === 0){
+                echo '<span class="badge text-bg-light fs-4 p-1">'.__('Free','psn').'</span>';
+            }
+            
+            if($soon->discounted){
+                echo ' ( <del>';
+                echo '￥'.$soon->original_price/100;
+                echo '</del>';
+                // echo 
+                echo ' -'.$soon->discount_percent.'% ) ';
+            }
+             ?>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted"><?php if($soon->final_price != 0){ if($soon->discounted){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $soon->discount_expiration , current_time('timestamp',true) ) );}else{ echo __('No discount','psn');} }else{echo __('Free to play','psn');}?></small>
+            </div>
+        </div>
+	</div>
+</article>
+
+<?php
+        }   //Coming soon end
+    ?>
+</div>
+
+
 
     <?php
     }else{

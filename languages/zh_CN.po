@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-05-27 10:10+0800\n"
-"PO-Revision-Date: 2023-05-27 10:10+0800\n"
+"POT-Creation-Date: 2023-05-31 22:08+0800\n"
+"PO-Revision-Date: 2023-05-31 22:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -745,30 +745,52 @@ msgstr "隐藏成就"
 
 #: template-parts/content-single-steam_trophy.php:74
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #. Template Name of the plugin/theme
-#: template-steam_promotion.php:5 template-steam_promotion.php:22
+#: template-steam_promotion.php:5 template-steam_promotion.php:28
 msgid "Steam Promotions"
 msgstr "Steam促销"
 
-#: template-steam_promotion.php:25
+#: template-steam_promotion.php:46
+msgid "Spotlight"
+msgstr "聚焦"
+
+#: template-steam_promotion.php:72
 msgid "Special sales"
 msgstr "特别优惠"
 
-#: template-steam_promotion.php:53 template-steam_promotion.php:87
+#: template-steam_promotion.php:98 template-steam_promotion.php:135
+#: template-steam_promotion.php:180 template-steam_promotion.php:222
 msgid "Discount time left:  "
 msgstr "折扣剩余："
 
-#: template-steam_promotion.php:53 template-steam_promotion.php:87
+#: template-steam_promotion.php:98 template-steam_promotion.php:135
+#: template-steam_promotion.php:180 template-steam_promotion.php:222
 msgid "No discount"
 msgstr "无优惠"
 
-#: template-steam_promotion.php:62
+#: template-steam_promotion.php:110
 msgid "Top sales"
 msgstr "售出最多"
 
-#: template-steam_promotion.php:107
+#: template-steam_promotion.php:150
+msgid "New release"
+msgstr "新发售"
+
+#: template-steam_promotion.php:168 template-steam_promotion.php:209
+msgid "Free"
+msgstr "免费"
+
+#: template-steam_promotion.php:180 template-steam_promotion.php:222
+msgid "Free to play"
+msgstr "免费游玩"
+
+#: template-steam_promotion.php:192
+msgid "Coming soon"
+msgstr "即将发售"
+
+#: template-steam_promotion.php:244
 msgid "Cached on"
 msgstr "缓存日期"
 
