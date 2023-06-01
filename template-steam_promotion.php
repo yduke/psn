@@ -5,10 +5,11 @@ Template Name: Steam Promotions
 __( 'Steam Promotions', 'dukeyin' );
 $wp_upload_dir = wp_upload_dir();
 $local_path = $wp_upload_dir['basedir'].'/dk-steam/api_cache/featuredcategories.json';
-if(!file_exists($local_path)){
+$filetime = filemtime($local_path );
+if(!file_exists($local_path) || (time() - $filetime > 43200)){
     GetSpecialSales();
 }
-$filetime = filemtime($local_path );
+
 $json       = file_get_contents($local_path);
 $obj        = json_decode($json);
 $special    = $obj->specials->items;
@@ -33,14 +34,14 @@ get_header();
     <?php
         foreach($obj as $gms){
             if($gms->id ==='cat_dailydeal'){
-                $dot = reset($gms->items);
+                foreach($gms->items as $dot){
 ?>
     <h2 class="mt-5 mb-4"><?php _e('Daily Deal','psn');?></h2>
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-2 g-2">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-2">
 <article>
     <div class="card text-bg-dark">
         <div class="bg-secondary bg-opacity-25 bg-gradient">
-            <img loading="lazy" width="616" height="353" src="<?php echo $dot->header_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+            <img loading="lazy" width="460" height="215" src="<?php echo $dot->header_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
         </div>
         <div class="card-body">
             <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $dot->id; ?>/" title="<?php echo $dot->name; ?>" rel="bookmark" target="_blank" class="link-light"><?php echo $dot->name; ?></a></h2>
@@ -63,6 +64,7 @@ get_header();
 </article>
     </div>
     <?php
+            }
     break;
             }
         } //Daily Deal end

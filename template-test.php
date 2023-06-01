@@ -21,10 +21,18 @@ Template Name: TEST
 
 // }
 // echo 'found';
-
-$r = update_steam_game_with_local_json();
+$expire = 1;
+$wp_upload_dir = wp_upload_dir();
+$local_path = $wp_upload_dir['basedir'].'/dk-steam/api_cache/featuredcategories.json';
+$filetime = filemtime($local_path );
+$time = time();
+// $r = update_steam_game_with_local_json();
 
 echo '<pre>';
- var_dump($r);
+ var_dump($time);
+ var_dump($filetime);
+ var_dump($time - $filetime);
+ var_dump(floatval($expire)*86400);
+ var_dump(($time - $filetime < floatval($expire)*86400));
 echo '</pre>';
 
