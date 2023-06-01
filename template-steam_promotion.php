@@ -28,20 +28,45 @@ get_header();
         <h1 class="page-title"><?php _e('Steam Promotions','psn');?></h1>
     </header>
 
-<?php
-// foreach($obj as $spot){
-//     if($spot->id == 'cat_spotlight'){
-//         foreach($spot->items as $item){
-//             echo $item->name;
-//             echo '<br>';
-//         }
 
-//     }else{
-//         break;
-//     }
-// }
+
+    <?php
+        foreach($obj as $gms){
+            if($gms->id ==='cat_dailydeal'){
+                $dot = reset($gms->items);
 ?>
-
+    <h2 class="mt-5 mb-4"><?php _e('Daily Deal','psn');?></h2>
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-2 g-2">
+<article>
+    <div class="card text-bg-dark">
+        <div class="bg-secondary bg-opacity-25 bg-gradient">
+            <img loading="lazy" width="616" height="353" src="<?php echo $dot->header_image; ?>" class="card-img-top wp-post-image" alt="" decoding="async" >
+        </div>
+        <div class="card-body">
+            <h2 class="card-title fs-6 text-truncate"><a href="https://store.steampowered.com/app/<?php echo $dot->id; ?>/" title="<?php echo $dot->name; ?>" rel="bookmark" target="_blank" class="link-light"><?php echo $dot->name; ?></a></h2>
+            <div class="card-text small text-truncate">
+            <?php 
+            echo '￥'.'<span class="badge fs-4 p-1">'. $dot->final_price/100 .'</span>';
+            if($dot->discounted){
+                echo ' ( <del>';
+                echo '￥'.$dot->original_price/100;
+                echo '</del>';
+                echo ' -'.$dot->discount_percent.'% ) ';
+            }
+             ?>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted"><?php if($dot->discounted && isset($dot->discount_expiration)){ echo __('Discount time left:  ','psn'). esc_html( human_time_diff( $dot->discount_expiration , current_time('timestamp',true) ) );} if($dot->discounted === false ){ echo __('No discount','psn');}?></small>
+            </div>
+        </div>
+	</div>
+</article>
+    </div>
+    <?php
+    break;
+            }
+        } //Daily Deal end
+    ?>
 
 <h2 class="mt-5 mb-4"><?php _e('Spotlight','psn');?></h2>
     <div class="row row-cols-3 row-cols-sm-3 row-cols-md-3 row-cols-lg-6 g-1">
@@ -59,14 +84,9 @@ foreach($obj as $spot){
      }else{
         break;
     }
-    }
+    }  //spotlight end
     ?>
 </div>
-
-
-
-
-
 
 
     <h2 class="mt-5 mb-4"><?php _e('Special sales','psn');?></h2>

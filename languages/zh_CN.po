@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PSN\n"
-"POT-Creation-Date: 2023-05-31 22:08+0800\n"
-"PO-Revision-Date: 2023-05-31 22:09+0800\n"
+"POT-Creation-Date: 2023-06-01 10:17+0800\n"
+"PO-Revision-Date: 2023-06-01 10:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -757,40 +757,46 @@ msgid "Spotlight"
 msgstr "聚焦"
 
 #: template-steam_promotion.php:72
-msgid "Special sales"
-msgstr "特别优惠"
+msgid "Daily Deal"
+msgstr "每日折扣"
 
-#: template-steam_promotion.php:98 template-steam_promotion.php:135
-#: template-steam_promotion.php:180 template-steam_promotion.php:222
+#: template-steam_promotion.php:93 template-steam_promotion.php:131
+#: template-steam_promotion.php:168 template-steam_promotion.php:213
+#: template-steam_promotion.php:255
 msgid "Discount time left:  "
 msgstr "折扣剩余："
 
-#: template-steam_promotion.php:98 template-steam_promotion.php:135
-#: template-steam_promotion.php:180 template-steam_promotion.php:222
+#: template-steam_promotion.php:93 template-steam_promotion.php:131
+#: template-steam_promotion.php:168 template-steam_promotion.php:213
+#: template-steam_promotion.php:255
 msgid "No discount"
 msgstr "无优惠"
 
-#: template-steam_promotion.php:110
+#: template-steam_promotion.php:105
+msgid "Special sales"
+msgstr "特别优惠"
+
+#: template-steam_promotion.php:143
 msgid "Top sales"
 msgstr "售出最多"
 
-#: template-steam_promotion.php:150
+#: template-steam_promotion.php:183
 msgid "New release"
 msgstr "新发售"
 
-#: template-steam_promotion.php:168 template-steam_promotion.php:209
+#: template-steam_promotion.php:201 template-steam_promotion.php:242
 msgid "Free"
 msgstr "免费"
 
-#: template-steam_promotion.php:180 template-steam_promotion.php:222
+#: template-steam_promotion.php:213 template-steam_promotion.php:255
 msgid "Free to play"
 msgstr "免费游玩"
 
-#: template-steam_promotion.php:192
+#: template-steam_promotion.php:225
 msgid "Coming soon"
 msgstr "即将发售"
 
-#: template-steam_promotion.php:244
+#: template-steam_promotion.php:277
 msgid "Cached on"
 msgstr "缓存日期"
 
