@@ -7,7 +7,7 @@ get_header();
 
 if ( have_posts() ) :
 ?>
-<header class="page-header">
+<header class="page-header container">
 	<h1 class="page-title">
 		<?php
 					if($post_type=='psn_game'){
@@ -70,6 +70,7 @@ if ( have_posts() ) :
 		?>
 	</h1>
 </header>
+<div class="container">
 <?php
 	get_template_part( 'archive', 'loop' );
 else :
@@ -78,5 +79,8 @@ else :
 endif;
 
 wp_reset_postdata(); // End of the loop.
-
+?>
+</div>
+<?php
 get_footer();
+

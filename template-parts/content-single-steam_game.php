@@ -1,12 +1,89 @@
-<?php $post_id=get_the_ID();?>
+<?php
+  $post_id=get_the_ID();
+  $next_post = get_next_post();
+  $prev_post = get_previous_post();
+  ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<?php 
+$has_game_bg =  get_post_meta($post_id,'img_bg',true);
+if($has_game_bg){ ?>
+  <div class="position-relative overflow-hidden py-5 text-center bg-light game-cover-art" style="background-image:url('<?php echo $has_game_bg; ?>')" >
+  <?php 
+    $has_game_logo = get_post_meta($post_id,'img_logo',true); 
+    $logo_position_meta = get_post_meta($post_id,'logo-position',true);
+    switch($logo_position_meta){
+      case 'l':
+        $logo_position = 'top-50 start-0 translate-middle-y';
+        break;
+      case 'r':
+        $logo_position = 'top-50 end-0 translate-middle-y';
+        break;
+      case 'c':
+        $logo_position = 'top-50 start-50 translate-middle';
+        break;
+      case 'lt':
+        $logo_position = 'top-0 start-0';
+        break;
+      case 'rt':
+        $logo_position = 'top-0 end-0';
+        break;
+      case 'lb':
+        $logo_position = 'bottom-0 start-0';
+        break;
+      case 'rb':
+        $logo_position = 'bottom-0 end-0';
+        break;
+      case 'tc':
+        $logo_position = 'start-50 translate-middle-x';
+        break;
+      case 'bc':
+        $logo_position = 'bottom-0 start-50 translate-middle-x';
+        break;
+      default:
+        $logo_position = 'top-50 start-0 translate-middle-y';
+    }
+    if ( $has_game_logo ) {
+      echo '<div class="logo-dom position-absolute '.$logo_position.'"><img class="img-fluid game-logo-image" src="' . $has_game_logo . '"></div>'; 
+      } 
+      ?>
+    </div>
+  <?php } ?>
+  <div class="container col-md-6">
+  
 
 <header class="entry-header">
     <div class="my-5 text-center">
-            <?php if ( has_post_thumbnail() ) :
+            <?php if ( has_post_thumbnail()& !$has_game_bg ) :
                     echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'full' ) . '</div>';
             endif; ?>
+  <!-- /.post-navigation -->
+  <div class="post-navigation d-flex justify-content-between ">
+	<?php
+		if ( $prev_post ) {
+			$prev_title = get_the_title( $prev_post->ID );
+	?>
+		<div class="pr-3">
+			<a class="previous-post btn btn-sm btn-outline-secondary" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
+				<span class="arrow">&larr;</span>
+				<span class="title"><?php echo wp_kses_post( $prev_title ); ?></span>
+			</a>
+		</div>
+	<?php
+		}
+		if ( $next_post ) {
+			$next_title = get_the_title( $next_post->ID );
+	?>
+		<div class="pl-3">
+			<a class="next-post btn btn-sm btn-outline-secondary" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
+				<span class="title"><?php echo wp_kses_post( $next_title ); ?></span>
+				<span class="arrow">&rarr;</span>
+			</a>
+		</div>
+	<?php
+		}
+	?>
+</div>
+<!-- /.post-navigation -->
         <h2 class="display-5 fw-bold">
           <i class="iconfont icon-steam size-m"></i>
           <?php
@@ -147,14 +224,17 @@
               <?php
             }
             ?>
-
+<?php 
+              $win = get_post_meta($post->ID,'platformWindows',true);
+              $mac = get_post_meta($post->ID,'platformMac',true);
+              $lnx = get_post_meta($post->ID,'platformLinux',true);
+              if($win ||$mac ||$lnx ){
+?>
             <tr>
               <td><?php _e('Platform','psn');?></td>
               <td>
                 <?php
-              $win = get_post_meta($post->ID,'platformWindows',true);
-              $mac = get_post_meta($post->ID,'platformMac',true);
-              $lnx = get_post_meta($post->ID,'platformLinux',true);
+
               if($win){
                 echo '<i class="iconfont icon-windows" title="Windows"></i>';
               }
@@ -167,7 +247,7 @@
               ?>
              </td>
             </tr>
-
+<?php }?>
             <?php $langs = get_the_terms( $post->ID, 'game_langs' ); 
             if($langs){
               ?>
@@ -350,11 +430,28 @@ if($achieved_count!='' && $achieved_earned !='' ){
               <div class="after"></div>
             </div>
           <?php } ?>
-  <p><?php _e('Achievement Progress','psn');?></p>
-  <p class="text-center"><?php echo $achieved_earned.'/'.$achieved_count;?></p>
-                  <div class="progress mb-5">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<?php echo $progress; ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress; ?>%"><?php echo $progress; ?>%</div>
-                  </div>
+
+
+
+  <div class="row mb-5">
+    <div class="col-md-3 text-center">
+  
+    <?php if ( has_post_thumbnail() ) {the_post_thumbnail('thumbnail', array('class' => 'rounded-3')); } ?>
+    </div>
+  
+    <div class="col-md-9">
+      <div class="row text-center">
+        <h3><?php the_title();?></h3>
+      </div>
+  
+      <p><?php _e('Achievement Progress','psn');?></p>
+      <p class="text-center"><?php echo $achieved_earned.'/'.$achieved_count;?></p>
+      <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<?php echo $progress; ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress; ?>%"><?php echo $progress; ?>%</div>
+      </div>
+    </div>
+  </div>
+
 <?php }?>
 
                   <div class="list-group w-auto mb-5">
@@ -392,6 +489,7 @@ if($achieved_count!='' && $achieved_earned !='' ){
                 }
           ?>
 </div><!-- /.entry-content -->
+</div><!-- /.container -->
 
 
 

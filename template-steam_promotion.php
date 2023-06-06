@@ -19,6 +19,7 @@ $coming_soon   = $obj->coming_soon->items;
 get_header();
 
 ?>
+<div class="container">
 <div class="row mb-4">
 <div class="col-sm-12">
 <?php
@@ -265,5 +266,7 @@ foreach($obj as $spot){
 <p><?php if($filetime){
     echo __('Cached on','psn').' '. get_date_from_gmt( date( 'Y-m-d H:i:s', $filetime ), get_option('date_format').' '.get_option('time_format') );;
     } ?></p>
+
+</div>
 <?php
 get_footer();

@@ -9,7 +9,7 @@ get_header();
 
 // $page_id = get_option( 'page_for_posts' );
 ?>
-<div class="row">
+<div class="container">
 
 	<div class="col-md-12">
 		<?php

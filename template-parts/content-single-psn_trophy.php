@@ -1,6 +1,6 @@
 <?php $post_id=get_the_ID();?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<div class="container col-md-6">
 
 <header class="entry-header">
     <div class="my-5 text-center">
@@ -66,5 +66,5 @@
     edit_post_link( __( 'Edit', 'psn' ), '<span class="edit-link">', '</span>' );
 ?>
 
-
+            </div>
 </article><!-- /#post-<?php the_ID(); ?> -->

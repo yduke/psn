@@ -11,3 +11,28 @@
 .grayscale.blurry img {
     filter: blur(3px) grayscale(.8)!important;
 }
+
+.game-cover-art{
+    margin-top: -16px;
+    background-position: center;
+    background-size: cover;
+    height:60vh;
+}
+.logo-dom{
+    padding: 2% 10%;
+}
+.game-logo-image{
+    /* max-height:150px; */
+    max-width:450px;
+}
+
+@media (max-width:575.98px) {
+    .game-cover-art{
+        height:30vh;
+        text-align: start!important;
+    }
+    .game-logo-image{
+        /* max-height:80px; */
+        max-width:290px
+    }
+}

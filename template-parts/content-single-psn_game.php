@@ -1,12 +1,87 @@
-<?php $post_id=get_the_ID();?>
+<?php 
+  $post_id=get_the_ID();
+  $next_post = get_next_post();
+  $prev_post = get_previous_post();
+?>
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-
+<?php 
+$has_game_bg = get_post_meta($post_id,'M_GAMEHUB_COVER_ART',true);
+if($has_game_bg){ ?>
+  <div class="position-relative overflow-hidden py-5 text-center bg-light game-cover-art" style="background-image:url('<?php echo $has_game_bg; ?>')" >
+    <?php 
+    $has_game_logo = get_post_meta($post_id,'M_LOGO',true); 
+    $logo_position_meta = get_post_meta($post_id,'logo-position',true);
+    switch($logo_position_meta){
+      case 'l':
+        $logo_position = 'top-50 start-0 translate-middle-y';
+        break;
+      case 'r':
+        $logo_position = 'top-50 end-0 translate-middle-y';
+        break;
+      case 'c':
+        $logo_position = 'top-50 start-50 translate-middle';
+        break;
+      case 'lt':
+        $logo_position = 'top-0 start-0';
+        break;
+      case 'rt':
+        $logo_position = 'top-0 end-0';
+        break;
+      case 'lb':
+        $logo_position = 'bottom-0 start-0';
+        break;
+      case 'rb':
+        $logo_position = 'bottom-0 end-0';
+        break;
+      case 'tc':
+        $logo_position = 'start-50 translate-middle-x';
+        break;
+      case 'bc':
+        $logo_position = 'bottom-0 start-50 translate-middle-x';
+        break;
+      default:
+        $logo_position = 'top-50 start-0 translate-middle-y';
+    }
+    if ( $has_game_logo ) {
+      echo '<div class="logo-dom position-absolute '.$logo_position.'"><img class="img-fluid game-logo-image" src="' . $has_game_logo . '"></div>'; 
+      } 
+      ?>
+  </div>
+  <?php } ?>
+  <div class="container col-md-6">
 <header class="entry-header">
 <div class="my-5 text-center">
-            <?php if ( has_post_thumbnail() ) :
-                    echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'medium' ) . '</div>';
-            endif; ?>
+   <?php if ( has_post_thumbnail()& !$has_game_bg ) {echo '<div class="post-thumbnail">' . get_the_post_thumbnail( $post_id, 'medium' ) . '</div>'; } ?>
+     <!-- /.post-navigation -->
+  <div class="post-navigation d-flex justify-content-between ">
+	<?php
+		if ( $prev_post ) {
+			$prev_title = get_the_title( $prev_post->ID );
+	?>
+		<div class="pr-3">
+			<a class="previous-post btn btn-sm btn-outline-secondary" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
+				<span class="arrow">&larr;</span>
+				<span class="title"><?php echo wp_kses_post( $prev_title ); ?></span>
+			</a>
+		</div>
+	<?php
+		}
+		if ( $next_post ) {
+			$next_title = get_the_title( $next_post->ID );
+	?>
+		<div class="pl-3">
+			<a class="next-post btn btn-sm btn-outline-secondary" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
+				<span class="title"><?php echo wp_kses_post( $next_title ); ?></span>
+				<span class="arrow">&rarr;</span>
+			</a>
+		</div>
+	<?php
+		}
+	?>
+</div>
+<!-- /.post-navigation -->
         <h2 class="display-5 fw-bold">
           <i class="iconfont icon-playstation size-m"></i>
           <?php
@@ -47,7 +122,8 @@
       ?>
 
 </header><!-- /.entry-header -->
-<div class="entry-content">
+
+<div class="entry-content ">
   
         <table class="table table-striped table-sm">
           <tbody>
@@ -303,7 +379,7 @@
 
 
 </div><!-- /.entry-content -->
-
+    </div>
 
 
 

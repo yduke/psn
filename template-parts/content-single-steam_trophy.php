@@ -1,6 +1,6 @@
 <?php $post_id=get_the_ID(); $achieved = get_post_meta($post_id,'achieved',true); $hidden = get_post_meta($post_id,'hidden',true);$global_percentage = get_post_meta($post_id,'global_percentage',true); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<div class="container col-md-6">
 
 <header class="entry-header <?php if($hidden=='1' && $achieved != '1'){echo 'grayscale blurry';} ?>">
 <div class="my-5 text-center">
@@ -84,5 +84,5 @@
     edit_post_link( __( 'Edit', 'psn' ), '<span class="edit-link">', '</span>' );
 ?>
 
-
+            </div>
 </article><!-- /#post-<?php the_ID(); ?> -->
