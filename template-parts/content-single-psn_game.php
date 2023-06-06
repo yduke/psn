@@ -93,6 +93,21 @@
             }
             ?>
 
+            <?php $display_price = get_post_meta($post_id,'display_price',true); 
+            if($display_price){
+              ?>
+            <tr>
+              <td><?php _e('Price','psn');?></td>
+              <td style="width: 70%;">
+              <?php 
+                echo $display_price;
+              ?>
+              </td>
+            </tr>
+            <?php
+            }
+            ?>
+
             <?php $game_platforms = get_the_terms( $post->ID, 'game_platforms' ); 
             if($game_platforms){
               ?>
