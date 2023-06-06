@@ -9,7 +9,7 @@
 <?php 
 $has_game_bg = get_post_meta($post_id,'M_GAMEHUB_COVER_ART',true);
 if($has_game_bg){ ?>
-  <div class="position-relative overflow-hidden py-5 text-center bg-light game-cover-art" style="background-image:url('<?php echo $has_game_bg; ?>')" >
+  <div class="position-relative overflow-hidden py-5 text-center bg-light game-cover-art ps-cover-art" style="background-image:url('<?php echo $has_game_bg; ?>')" >
     <?php 
     $has_game_logo = get_post_meta($post_id,'M_LOGO',true); 
     $logo_position_meta = get_post_meta($post_id,'logo-position',true);

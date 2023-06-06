@@ -18,6 +18,10 @@
     background-size: cover;
     height:60vh;
 }
+.game-cover-art.ps-cover-art{
+height:90vh
+}
+
 .logo-dom{
     padding: 2% 10%;
 }
@@ -28,11 +32,16 @@
 
 @media (max-width:575.98px) {
     .game-cover-art{
-        height:30vh;
+        height:50vw;
         text-align: start!important;
     }
+    .game-cover-art.ps-cover-art{
+        height:62vw
+        }
+    .logo-dom{
+        max-width: 50%;
+    }
     .game-logo-image{
-        /* max-height:80px; */
-        max-width:290px
+        width: -webkit-fill-available;
     }
 }
